@@ -52,3 +52,7 @@ xxxxxxx
 ## Comments
 
 xxxxxxx
+
+## License
+
+The source code is released under the [MIT License](https://github.com/pedrofernandoch/only-geek-store/blob/master/LICENSE).
