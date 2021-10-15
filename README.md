@@ -3,7 +3,7 @@ ICMC - Instituto De Ciências Matemáticas e de Computação, USP São Carlos<br
 Subject project to consolidate learning and web development techniques through the creation of an online store, the project will be used as approval criteria.<br>
 
 ### Group 5
-Mariana<br>
+Mariana Aya Suzuki Uchida - 11236205<br>
 Breno<br>
 Pedro Fernando Christofoletti dos Santos  - 10295217<br>
 
