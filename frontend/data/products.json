@@ -1,0 +1,108 @@
+{
+    "products": [{
+            "id": 1,
+            "title": "Canecas DBZ",
+            "image": "./images/products/anime/canecaDBZ.png",
+            "price": 35,
+            "category": "Anime"
+        },
+        {
+            "id": 2,
+            "title": "Caneca Naruto",
+            "image": "./images/products/anime/canecaNaruto.png",
+            "price": 29.90,
+            "category": "Anime"
+        },
+        {
+            "id": 3,
+            "title": "Kit Naruto",
+            "image": "./images/products/anime/kitNaruto.png",
+            "price": 150,
+            "category": "Anime"
+        },
+        {
+            "id": 4,
+            "title": "Caneca Pokemon",
+            "image": "./images/products/anime/canecaPokemon.png",
+            "price": 40,
+            "category": "Anime"
+        },
+        {
+            "id": 5,
+            "title": "Caderno do Death Note",
+            "image": "./images/products/anime/cadernoDeathNote.png",
+            "price": 25,
+            "category": "Anime"
+        },
+        {
+            "id": 6,
+            "title": "Jogo DBZ PS4",
+            "image": "./images/products/games/jogoDBZ.png",
+            "price": 43,
+            "category": "Games"
+        },
+        {
+            "id": 7,
+            "title": "Jogo Naruto PS4",
+            "image": "./images/products/games/jogoNaruto.png",
+            "price": 309,
+            "category": "Games"
+        },
+        {
+            "id": 8,
+            "title": "Pokemon Sword - Switch",
+            "image": "./images/products/games/PokemonSwordSwitch.png",
+            "price": 379.90,
+            "category": "Games"
+        },
+        {
+            "id": 9,
+            "title": "Pokemon Shield - Switch",
+            "image": "./images/products/games/PokemonShieldSwitch.png",
+            "price": 364.90,
+            "category": "Games"
+        },
+        {
+            "id": 10,
+            "title": "Pokemon Let's Go Pikachu - Switch",
+            "image": "./images/products/games/PokemonLetsGoSwitch.png",
+            "price": 379.90,
+            "category": "Games"
+        },
+        {
+            "id": 11,
+            "title": "Moletom Round 6 (Squid Game)",
+            "image": "./images/products/series/moletonSG.png",
+            "price": 160,
+            "category": "Series"
+        },
+        {
+            "id": 12,
+            "title": "Serie Friends Dublado",
+            "image": "./images/products/series/seriesFriendsSerie.png",
+            "price": 23,
+            "category": "Series"
+        },
+        {
+            "id": 13,
+            "title": "Caneca Grey's Anatomy",
+            "image": "./images/products/series/seriesGACaneca.png",
+            "price": 25,
+            "category": "Series"
+        },
+        {
+            "id": 14,
+            "title": "Poster de How I Met Your Mother",
+            "image": "./images/products/series/seriesHMYMCaneca.png",
+            "price": 23.90,
+            "category": "Series"
+        },
+        {
+            "id": 15,
+            "title": "Serie de La Casa De Papel Dublado",
+            "image": "./images/products/series/seriesLCDPToyArt.png",
+            "price": 45.90,
+            "category": "Series"
+        }
+    ]
+}
