@@ -11,10 +11,13 @@ Pedro Fernando Christofoletti dos Santos  - 10295217<br>
 # Only Geek store
 <img src="frontend/images/onlyGeek/logo.png" alt="Only Geek logo" style="width:250px;"/>
 
+## Online Preview
+[Only Geek](https://only-geek.pedrofernandoch.repl.co/).
+
 # Table of Contents
 1. [Requirements](#requirements)
 2. [Project Description](#project-description)
-3. [Comments About the Code](#cmments-about-the-code)
+3. [Comments About the Code](#comments-about-the-code)
 4. [Test Plan](#test-plan)
 5. [Test Results](#test-results)
 6. [Build Procedures](#build-procedures)
