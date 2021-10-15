@@ -12,7 +12,7 @@ Pedro Fernando Christofoletti dos Santos  - 10295217<br>
 <img src="frontend/images/onlyGeek/logo.png" alt="Only Geek logo" style="width:250px;"/>
 
 ## Online Preview
-[Only Geek](https://only-geek.pedrofernandoch.repl.co/).
+[Only Geek](https://only-geek.pedrofernandoch.repl.co/)
 
 # Table of Contents
 1. [Requirements](#requirements)
