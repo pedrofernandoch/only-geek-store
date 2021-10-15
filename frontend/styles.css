@@ -1670,6 +1670,7 @@ span.dot::before {
   padding: 1rem 0;
   text-align: center;
   border: 1px solid var(--primaryColor);
+  background-color: var(--dark-blue);
 }
 
 .input-counter svg {
@@ -1906,6 +1907,10 @@ span.dot::before {
 /* Cart Area */
 .cart__area {
   padding-bottom: 5rem;
+}
+
+.cart__title{
+  color: var(--grey-blue);
 }
 
 .cart__form {
