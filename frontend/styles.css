@@ -226,6 +226,114 @@ h4 {
   left: -1rem;
 }
 
+/*Login*/
+.login__spad{
+  padding: 6rem 0;
+  border-top: 1px solid var(--primaryColor);
+  text-align: center;
+}
+
+.login__form{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.h3login{
+  text-align: center;
+  color:var(--primaryColor);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.login__box{
+  background-color: var(--grey-blue); 
+  width: 25%; 
+  height:fit-content; 
+  box-shadow: 3px 5px 4px #202020;
+  border-radius: 10px;
+  padding: 30px; 
+  margin: auto
+}
+
+.forget_pass{
+  margin-top: 5px;
+  justify-content: center;
+}
+
+.input__item{
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 10px;
+  background-color: transparent;
+  border-radius: 4px;
+  color: var(--black);
+}
+
+.login__link:link,
+.login__link:visited{
+  padding: 10px;
+  background-color: var(--black);
+  color: var(--white);
+  transition: 0.3s;
+}
+.login__link{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+.login__link:hover {
+  background-color: #000;
+}
+
+.login__register{
+  justify-content: center;
+}
+
+hr{
+  margin-top: 10% ;
+  margin-bottom: 10%;
+  width: 100%;
+  justify-content: center;
+  background-color: var(--orange);
+}
+
+
+
+.social__icon:link,
+.social__icon:visited{
+  padding: 10px;
+  background-color: var(--black);
+  color: var(--white);
+  transition: 0.3s;
+}
+.social__icon{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.social__icon{
+  height: 46px;
+  width: 46px;
+  border: 1px solid #00171F;
+  margin: 0 0.45rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.social-icon:hover{
+  background-color: #000;
+}
+
+
 /* Navigation Media Query */
 @media only screen and (max-width: 768px) {
   .nav__menu {
