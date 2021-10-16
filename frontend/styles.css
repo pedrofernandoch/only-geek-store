@@ -2199,3 +2199,7 @@ hr{
   background-color: #000;
 }
 
+.icons__centered{
+  display: inline-block;
+}
+
