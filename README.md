@@ -41,11 +41,15 @@ Pedro Fernando Christofoletti dos Santos  - 10295217<br>
 * The system must provide filtering functionality to choose products
 * The system should offer options for applying coupons when making a purchase
 * Customers can track the shipment of their order through the system
-
+* Customers can have a Wish list
+* News board from the Geek World
+* Product suggestion based on recent purchases
+* User area 
 
 ## Project Description
 
-xxxxxxx
+  Only Geek is a geek content store that sells clothing, accessories, toys, posters, games, dvds, decorations and so on. She also has a news board from the geek world, her goal is to bring a little of this universe to the reality of consumers.<br>
+  The store will allow the purchase of several products with different payment methods and option to apply coupon, order tracking, login with user area, wish list, shopping cart, product suggestion based on last purchases filtering and search options of products, always updated news board and for administrators a CRUD platform for database entities.
 
 ## Comments About the Code
 
