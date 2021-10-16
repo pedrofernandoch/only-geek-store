@@ -58,7 +58,7 @@ xxxxxxx
 
 ## Test Plan
 
-xxxxxxx
+To test the api we will use postman and we will build a table of inputs and their expected outputs to validate the created functions
 
 ## Test Results
 
