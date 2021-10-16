@@ -4,6 +4,7 @@
 .admin__navigation{
 	background-color: var(--dark-blue);
 	font-size: 1.5em;
+	padding-top: 0.5em;
 }
 
 .table-wrapper {
@@ -82,9 +83,7 @@ table.table td a.edit {
 table.table td a.delete {
 	color:var(--red);
 }
-table.table td i {
-	font-size: 19px;
-}
+
 table.table .avatar {
 	border-radius: 50%;
 	vertical-align: middle;
