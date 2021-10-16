@@ -48,8 +48,9 @@ Pedro Fernando Christofoletti dos Santos  - 10295217<br>
 
 ## Project Description
 
-  Only Geek is a geek content store that sells clothing, accessories, toys, posters, games, dvds, decorations and so on. She also has a news board from the geek world, her goal is to bring a little of this universe to the reality of consumers.<br>
+  Only Geek is a geek content store that sells clothing, accessories, toys, posters, games, dvds, decorations and so on. She also has a news board from the geek world, her goal is to bring a little of this universe to the reality of consumers.<br><br>
   The store will allow the purchase of several products with different payment methods and option to apply coupon, order tracking, login with user area, wish list, shopping cart, product suggestion based on last purchases filtering and search options of products, always updated news board and for administrators a CRUD platform for database entities.
+  For the frontend we will use HTML, CSS, JavaScript and the React.js library, we will also have the help of npm packages such as Redux to handle the application states, axios for handling requests and other libraries that helped in the design such as Material UI as well as Google Fonts, Bootstrap and Jquery. As for the backend we will use Node.js with Express to create the web server and finally we will use moongose to connect to the MongoDB database as well as create tables, perform queries etc.
 
 ## Comments About the Code
 
