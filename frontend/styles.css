@@ -1964,7 +1964,7 @@ span.dot::before {
 .product__name a:link,
 .product__name a:visited {
   font-size: 1.5rem;
-  color: var(--black2);
+  color: var(--white);
 }
 
 .product__name small {
@@ -2003,7 +2003,8 @@ span.dot::before {
   padding: 1.2rem 3rem;
   color: var(--black);
   text-transform: uppercase;
-  border: 1px solid var(--black);
+  border: 1px solid var(--green-blue);
+  color: var(--green-blue);
   transition: all 0.4s ease-in-out;
 }
 

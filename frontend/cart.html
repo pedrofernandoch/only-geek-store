@@ -21,73 +21,73 @@
     <!-- Custom StyleSheet -->
     <link rel="stylesheet" href="styles.css" />
 
-    <title>Phone Shop</title>
+    <title>Only Geek</title>
 </head>
 
 <body>
 
     <!-- Header -->
     <header id="header" class="header">
-      <div class="navigation">
-        <div class="container">
-          <nav class="nav">
-            <div class="nav__hamburger">
-              <svg>
-                <use xlink:href="./images/sprite.svg#icon-menu"></use>
-              </svg>
+        <div class="navigation">
+            <div class="container">
+                <nav class="nav">
+                    <div class="nav__hamburger">
+                        <svg>
+                            <use xlink:href="./images/sprite.svg#icon-menu"></use>
+                        </svg>
+                    </div>
+                    <div class="nav__logo">
+                        <a href="/" class="scroll-link"><img src="images/onlyGeek/logo.png"></a>
+                    </div>
+
+                    <div class="nav__menu">
+                        <div class="menu__top">
+                            <span class="nav__category">Only Geek</span>
+                            <a href="#" class="close__toggle">
+                                <svg>
+                                    <use xlink:href="./images/sprite.svg#icon-cross"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <ul class="nav__list">
+                            <li class="nav__item">
+                                <a href="#header" class="nav__link scroll-link">Home</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#category" class="nav__link scroll-link">Categories</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#news" class="nav__link scroll-link">News</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="#contact" class="nav__link scroll-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="nav__icons">
+                        <a href="#" class="icon__item">
+                            <svg class="icon__user">
+                                <use xlink:href="./images/sprite.svg#icon-user"></use>
+                            </svg>
+                        </a>
+
+                        <a href="#" class="icon__item">
+                            <svg class="icon__search">
+                                <use xlink:href="./images/sprite.svg#icon-search"></use>
+                            </svg>
+                        </a>
+
+                        <a href="#" class="icon__item">
+                            <svg class="icon__cart">
+                                <use xlink:href="./images/sprite.svg#icon-shopping-basket"></use>
+                            </svg>
+                            <span id="cart__total">2</span>
+                        </a>
+                    </div>
+                </nav>
             </div>
-            <div class="nav__logo">
-              <a href="/" class="scroll-link"><img src="images/onlyGeek/logo.png"></a>
-            </div>
-  
-            <div class="nav__menu">
-              <div class="menu__top">
-                <span class="nav__category">Only Geek</span>
-                <a href="#" class="close__toggle">
-                  <svg>
-                    <use xlink:href="./images/sprite.svg#icon-cross"></use>
-                  </svg>
-                </a>
-              </div>
-              <ul class="nav__list">
-                <li class="nav__item">
-                  <a href="#header" class="nav__link scroll-link">Home</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#category" class="nav__link scroll-link">Categories</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#news" class="nav__link scroll-link">News</a>
-                </li>
-                <li class="nav__item">
-                  <a href="#contact" class="nav__link scroll-link">Contact</a>
-                </li>
-              </ul>
-            </div>
-  
-            <div class="nav__icons">
-              <a href="#" class="icon__item">
-                <svg class="icon__user">
-                  <use xlink:href="./images/sprite.svg#icon-user"></use>
-                </svg>
-              </a>
-  
-              <a href="#" class="icon__item">
-                <svg class="icon__search">
-                  <use xlink:href="./images/sprite.svg#icon-search"></use>
-                </svg>
-              </a>
-  
-              <a href="#" class="icon__item">
-                <svg class="icon__cart">
-                  <use xlink:href="./images/sprite.svg#icon-shopping-basket"></use>
-                </svg>
-                <span id="cart__total">2</span>
-              </a>
-            </div>
-          </nav>
         </div>
-      </div>
 
         <div class="page__title-area">
             <div class="container">
@@ -370,14 +370,6 @@
     </footer>
 
     <!-- End Footer -->
-
-    <!-- Go To -->
-
-    <a href="#header" class="goto-top scroll-link">
-        <svg>
-            <use xlink:href="./images/sprite.svg#icon-arrow-up"></use>
-        </svg>
-    </a>
 
     <!-- Glide Carousel Script -->
     <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
