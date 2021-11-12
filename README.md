@@ -9,7 +9,7 @@ Pedro Fernando Christofoletti dos Santos  - 11218560<br>
 
 ---
 # Only Geek store
-<img src="frontend/images/onlyGeek/logo.png" alt="Only Geek logo" style="width:250px;"/>
+<img src="old-frontend/images/onlyGeek/logo.png" alt="Only Geek logo" style="width:250px;"/>
 
 ## Online Preview
 <a href="https://only-geek.pedrofernandoch.repl.co/" target="_blank">Only Geek</a>
