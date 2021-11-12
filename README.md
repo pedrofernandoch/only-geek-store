@@ -5,7 +5,7 @@ Subject project to consolidate learning and web development techniques through t
 ### Group 5
 Mariana Aya Suzuki Uchida - 11236205<br>
 Breno Kenji Ogata Bianchi - 10260372<br>
-Pedro Fernando Christofoletti dos Santos  - 10295217<br>
+Pedro Fernando Christofoletti dos Santos  - 11218560<br>
 
 ---
 # Only Geek store
