@@ -29,13 +29,29 @@ export default class GeekNewsSlider extends Component {
         };
 
         return (
-            <div className="hero">
-                <ul className="glide__slides">
-                    <Slider {...settings}>
-                        {this.generateGeekNewsComponents()}
-                    </Slider>
-                </ul>
-            </div>
+            <section class="section news" id="news">
+                <div class="container">
+                    <div class="title__container">
+                        <div class="section__titles">
+                            <div class="section__title active">
+                                <span class="dot"></span>
+                                <h1 class="primary__title">Geek News</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news__container">
+                        <div class="glide" id="glide_5">
+                            <div class="glide__track" data-glide-el="track">
+                                <ul className="glide__slides">
+                                    <Slider {...settings}>
+                                        {this.generateGeekNewsComponents()}
+                                    </Slider>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </section>   
         )
     }
 }
