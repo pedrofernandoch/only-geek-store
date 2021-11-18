@@ -5,7 +5,7 @@ export default class Testimonial extends Component {
         return (
             <li>
 
-                <div className="hero__center">
+                <div className="hero__centertest">
                     <div className="hero__left">
                         <span>{this.props.title}</span>
                         <h1>{this.props.bigTitle}</h1>
