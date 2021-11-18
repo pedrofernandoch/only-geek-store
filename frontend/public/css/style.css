@@ -1206,12 +1206,11 @@ body.toggled::after {
 }
 /* Login Modal */
 .login-modal-left {
-    background: rgba(0, 0, 0, 0) url("../img/login.jpg") repeat scroll center center;
+    background: #00171F url("../img/onlyGeek/logo.png") no-repeat center/90%;
     float: right;
-    height: 300px;
+    height: 100%;
     list-style: outside none none;
-    margin: 70px auto auto;
-    width: 322px;
+    width: 100%;
 }
 .form-control {
     border-radius: 2px;
