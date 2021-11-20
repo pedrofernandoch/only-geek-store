@@ -7,10 +7,11 @@ h3 {
 .footer {
     background-color: var(--black3);
     padding: 6rem 1rem;
-    line-height: 3rem;
+    line-height: 1.3rem;
   }
   
 .footer-top__box span svg {
+    font-family: "Archivo", sans-serif;
     width: 1.6rem;
     height: 1.6rem;
     fill: var(--grey3);
@@ -32,6 +33,7 @@ h3 {
     color: var(--grey);
     font-size: 1.4rem;
     transition: 0.6s;
+    line-height: 1.6;
 }
 
 .footer-top__box a:hover {
@@ -47,6 +49,11 @@ h3 {
     font-size: 1.8rem;
     font-weight: 400;
     margin-bottom: 1rem;
+}
+
+.footer-text{
+    display: inline-block;
+    text-align: left;
 }
 
 @media only screen and (max-width: 998px) {

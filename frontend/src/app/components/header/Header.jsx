@@ -6,7 +6,6 @@ import { GetUserLogin } from '../../components/services';
 
 class Navigation extends Component {
     constructor(props) {
-        console.log('Construiu')
         super(props);
         this.state = {
             token: '', userName: '', searchtxt: ''
@@ -39,7 +38,7 @@ class Navigation extends Component {
         console.log("Header");
         return (
             <div>
-                <header className="header clearfix">
+                <header id="header" className="header clearfix">
                     <nav className="navbar navbar-light navbar-expand-lg bg-faded osahan-menu">
                         <div className="container-fluid">
                             <a className="navbar-brand" href="/"> <img src="/img/onlyGeek/logo.png" alt="logo" /> </a>
@@ -57,6 +56,20 @@ class Navigation extends Component {
                                         </div>
                                     </div>
                                 </div>
+                                <ul class=" list-inline nav__list">
+                                    <li class="nav__item">
+                                        <a href="#banner" class="nav__link scroll-link">Home</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#products" class="nav__link scroll-link">Products</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#news" class="nav__link scroll-link">News</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="#facility" class="nav__link scroll-link">Facilities</a>
+                                    </li>
+                                </ul>
                                 <div className="my-2 my-lg-0">
                                     <ul className="list-inline main-nav-right" >
                                         <li className="list-inline-item">
@@ -86,6 +99,7 @@ class Navigation extends Component {
                 </header>
                 <Login />
             </div>
+
         )
     }
 }

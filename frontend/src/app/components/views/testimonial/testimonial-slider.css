@@ -44,7 +44,7 @@
 .hero .glide__slides {
 background-color: var(--primaryColor);
 position: relative;
-height: 70vh;
+height: 50vh;
 font-size: 1.6rem;
 font-weight: 400;
 }
@@ -130,20 +130,25 @@ border-radius: 50%;
 
 /* Hero Media Query */
 @media only screen and (max-width: 999px) {
+.hero,
+.hero .glide__slides {
+  height: 75vh;
+}
+
 .hero__center {
   flex-direction: column;
   text-align: center;
 }
 
 .hero__right {
-  top: 50%;
+  top: 0%;
   position: absolute;
 }
 
 .hero__left {
-  position: absolute;
   padding: 0 1rem;
-  top: 20%;
+  padding-top: 14rem;;
+  top: 100%;
 }
 
 .hero__right img {

@@ -3,9 +3,7 @@ import Bannerslider from '../banners-slider/BannersSlider';
 import Testimonialslider from '../testimonial/TestimonialSlider';
 import Collection from '../collection/Collection';
 import GeekNewsSlider from '../geekNews/GeekNewsSlider';
-//import Topsection from '../top-section/TopSection';
-// import Bestofferbanner from './best-offers-banner';
-// import Topstample from './top-stample';
+import Products from '../products/Products';
 
 export default class Home extends Component {
     render() {
@@ -13,11 +11,9 @@ export default class Home extends Component {
             <div className="wrapper">
                 <Bannerslider />
                 <Collection />
+                <Products />
                 <Testimonialslider />
                 <GeekNewsSlider />
-                {/* <Topsection /> */}
-                {/*<<Bestofferbanner />
-                <Topstample />*/}
             </div>
         )
     }

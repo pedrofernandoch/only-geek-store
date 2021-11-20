@@ -29,7 +29,7 @@ export default class Bannerslider extends Component {
         };
 
         return (
-            <div className="hero">
+            <div id="banner" className="hero">
                 <ul className="glide__slides">
                     <Slider {...settings}>
                         {this.generateBannerComponents()}

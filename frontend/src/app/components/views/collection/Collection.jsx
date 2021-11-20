@@ -10,7 +10,7 @@ export default class Collection extends Component {
                         <div class="img__container">
                             <img class="collection_02" src="img/collection/goku_adidas.png" alt="Goku with Adidas Clothes" />
                         </div>
-                        <div class="collection__content">
+                        <div class="collection__contentc">
                             <div class="collection__data">
                                 <span>New releases in all sizes</span>
                                 <h1>CLOTHES</h1>
@@ -22,7 +22,7 @@ export default class Collection extends Component {
                         <div class="img__container">
                             <img class="collection_01" src="img/collection/spider-man.png" alt="Spider Man" />
                         </div>
-                        <div class="collection__content">
+                        <div class="collection__contentc">
                             <div class="collection__data">
                                 <span>Games for all devices</span>
                                 <h1>GAMES</h1>
