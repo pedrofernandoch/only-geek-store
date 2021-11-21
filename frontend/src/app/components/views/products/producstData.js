@@ -2,7 +2,8 @@ const products = [
     {
         id: 1,
         name: "DBZ Mug",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 10,
         photo: "img/products/anime/DBZ-Mug.png",
         productphotos: [
@@ -19,7 +20,8 @@ const products = [
     {
         id: 2,
         name: "Naruto Mug",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 20,
         photo: "img/products/anime/Naruto-Mug.png",
         productphotos: [
@@ -36,7 +38,8 @@ const products = [
     {
         id: 3,
         name: "Kit Naruto",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 20,
         photo: "img/products/anime/Naruto-Kit.png",
         productphotos: [
@@ -53,7 +56,8 @@ const products = [
     {
         id: 4,
         name: "Pokemon Mug",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 5,
         photo: "img/products/anime/Pokemon-Mug.png",
         productphotos: [
@@ -70,7 +74,8 @@ const products = [
     {
         id: 5,
         name: "Death Note - Notebook",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 20,
         photo: "img/products/anime/DeathNote-Notebook.png",
         productphotos: [
@@ -87,7 +92,8 @@ const products = [
     {
         id: 6,
         name: "DBZ Game - PS4",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 30,
         photo: "img/products/games/DBZ-PS4.png",
         productphotos: [
@@ -104,7 +110,8 @@ const products = [
     {
         id: 7,
         name: "Naruto Game - PS4",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 25,
         photo: "img/products/games/Naruto-PS4.png",
         productphotos: [
@@ -121,7 +128,8 @@ const products = [
     {
         id: 8,
         name: "Pokemon Sword - Switch",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 50,
         photo: "img/products/games/PokemonSwordSwitch.png",
         productphotos: [
@@ -138,7 +146,8 @@ const products = [
     {
         id: 9,
         name: "Pokemon Shield - Switch",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 50,
         photo: "img/products/games/PokemonShieldSwitch.png",
         productphotos: [
@@ -155,7 +164,8 @@ const products = [
     {
         id: 10,
         name: "Pokemon Let's Go Pikachu - Switch",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 35,
         photo: "img/products/games/PokemonLetsGoSwitch.png",
         productphotos: [
@@ -172,7 +182,8 @@ const products = [
     {
         id: 11,
         name: "Seatshirt (Squid Game)",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 25,
         photo: "img/products/series/SG-sweatshirt.png",
         productphotos: [
@@ -189,7 +200,8 @@ const products = [
     {
         id: 12,
         name: "Friends Series",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 60,
         photo: "img/products/series/Friends-Series.png",
         productphotos: [
@@ -206,7 +218,8 @@ const products = [
     {
         id: 13,
         name: "Grey's Anatomy Mug",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 10,
         photo: "img/products/series/GA-Mug.png",
         productphotos: [
@@ -223,7 +236,8 @@ const products = [
     {
         id: 14,
         name: "How I Met your Mother Mug",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 15,
         photo: "img/products/series/HMYM-Mug.png",
         productphotos: [
@@ -240,7 +254,8 @@ const products = [
     {
         id: 15,
         name: "La Casa De Papel Toy Art",
-        //unitSize: 10,
+        stock: 5,
+        sold: 5,
         discountPer: 25,
         photo: "img/products/series/LCDP-ToyArt.png",
         productphotos: [

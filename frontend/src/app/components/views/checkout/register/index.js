@@ -126,7 +126,7 @@ export default class Register extends Component {
                                                 </fieldset>
                                                 <div className="custom-control custom-checkbox">
                                                     <input type="checkbox" className="custom-control-input" id="customCheck2" />
-                                                    <label className="custom-control-label" htmlFor="customCheck2">I Agree with <a href="#">Term and Conditions</a></label>
+                                                    <label className="custom-control-label" htmlFor="customCheck2">I Agree with <a href="/">Term and Conditions</a></label>
                                                 </div>
                                             </form>
                                         </div>

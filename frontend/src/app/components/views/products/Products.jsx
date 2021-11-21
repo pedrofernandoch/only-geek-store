@@ -34,10 +34,11 @@ class Products extends Component {
         this.setState({ limit: this.state.limit + 6 })
     }
     handleChangeByCategory(value) {
-        if (value) {
+        /*if (value) {
             this.setState({ isloaded: true, list: value.data })
-        }
+        }*/
     }
+
     render() {
         let { list, isloaded, limit } = this.state;
         return (
@@ -80,7 +81,7 @@ class Products extends Component {
                                                     <div className="item">
                                                         <div className="product">
                                                             <Link to={{
-                                                                pathname: `/p/${row.slug}/${row.id}`,
+                                                                pathname: `/p/${row.slug}/${index/*row.id*/}`,
                                                                 state: row
                                                             }}>
                                                                 <div className="product-header">
@@ -91,7 +92,7 @@ class Products extends Component {
                                                                     <h5>{row.name}</h5>
                                                                 </div>
                                                             </Link>
-                                                            <div className="product-footer">
+                                                            <div className="product-price">
                                                                 <button type="button" className="btn btn-secondary btn-sm float-right" onClick={() => this.props.addToCart(row)}><i className="mdi mdi-cart-outline" /> Add To Cart</button>
                                                                 <p className="offer-price mb-0">${row.netPrice}  <i className="mdi mdi-tag-outline" /><br /><span className="regular-price">${row.price} </span></p>
                                                             </div>
@@ -100,7 +101,7 @@ class Products extends Component {
                                                 </div>
                                             ))}
                                     </div>
-
+                                    <br />
                                     <div class="more-product-btn">
                                         <button class="show-more-btn hover-btn" onClick={this.onLoadMore}>Show More</button>
                                     </div>
@@ -110,7 +111,7 @@ class Products extends Component {
                         </div>
                     }
                 </section>
-            </div>
+            </div >
         )
     }
 }

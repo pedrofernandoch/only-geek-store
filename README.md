@@ -58,7 +58,7 @@ xxxxxxx
 
 ## Test Plan
 
-To test the api we will use postman and we will build a table of inputs and their expected outputs to validate the created functions
+To test the api we will use postman and we will build a table of inputs and their expected outputs to validate the created functions. For the frontend, we will create possible paths between the application's routes ranging from product search and choice, addition to the cart, login or registration and finally the purchase checkout, as well as the crud of the admin page.
 
 ## Test Results
 
@@ -66,7 +66,40 @@ xxxxxxx
 
 ## Build Procedures
 
-xxxxxxx
+### Pre-Requisites
+
+- Yarn 1.22.17
+- Node 16.13.0
+
+### Installation
+
+```bash
+git clone https://github.com/pedrofernandoch/only-geek-store.git
+cd only-geek-store/frontend
+```
+
+In the project directory, you can run:
+
+### `yarn start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `yarn install`
+
+Install all project dependencies
+
+### `yarn build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+
+Now you just need to setup an HTTP server that delivers the index.html generated in the build and point the browser to that path  and the client should work.
 
 ## Problems
 

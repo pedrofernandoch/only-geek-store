@@ -1,7 +1,5 @@
-.header {
-    display: inline-block;
-}
-
-.header:hover{
-
+.nav__item:hover{
+    opacity: 1;
+    background-color: var(--ocean-blue);
+    color: var(--orange);
 }

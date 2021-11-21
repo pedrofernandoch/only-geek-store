@@ -3,6 +3,7 @@ import Login from '../../auth/login/Login';
 //import { withRouter } from 'react-router-dom';
 import Cartsidebar from '../views/cart-sidebar/CartSidebar';
 import { GetUserLogin } from '../../components/services';
+import "./header.css"
 
 class Navigation extends Component {
     constructor(props) {
@@ -56,20 +57,6 @@ class Navigation extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <ul class=" list-inline nav__list">
-                                    <li class="nav__item">
-                                        <a href="#banner" class="nav__link scroll-link">Home</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#products" class="nav__link scroll-link">Products</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#news" class="nav__link scroll-link">News</a>
-                                    </li>
-                                    <li class="nav__item">
-                                        <a href="#facility" class="nav__link scroll-link">Facilities</a>
-                                    </li>
-                                </ul>
                                 <div className="my-2 my-lg-0">
                                     <ul className="list-inline main-nav-right" >
                                         <li className="list-inline-item">
@@ -94,6 +81,20 @@ class Navigation extends Component {
                                     </ul>
                                 </div>
                             </div>
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a href="#banner" class="nav__link scroll-link">Home</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#products" class="nav__link scroll-link">Products</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#news" class="nav__link scroll-link">News</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="#facility" class="nav__link scroll-link">Facilities</a>
+                                </li>
+                            </ul>
                         </div>
                     </nav>
                 </header>

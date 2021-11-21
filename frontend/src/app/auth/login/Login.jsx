@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { GetUserLogin } from '../../components/services';
-import { NotificationManager } from "react-notifications";
+// import { GetUserLogin } from '../../components/services';
+// import { NotificationManager } from "react-notifications";
 import Register from '../register/Register';
 
 const emailRegex = RegExp(
@@ -58,18 +58,18 @@ export default class Login extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-        let { email, password } = this.state;
-        let data = { email: email, password: password }
+        //let { email, password } = this.state;
+        //let data = { email: email, password: password }
         if (formValid(this.state)) {
-            let user = await GetUserLogin.getUserLogin(data);
-            if (user) {
-                NotificationManager.success("success", "Login");
-                await GetUserLogin.authenticate(user.token, email);
-            } else {
-                NotificationManager.error("Please check your email & passord", "Input Error");
-            }
+            //let user = await GetUserLogin.getUserLogin(data);
+            //if (user) {
+            //NotificationManager.success("success", "Login");
+            //await GetUserLogin.authenticate(user.token, email);
+            //} else {
+            //NotificationManager.error("Please check your email & passord", "Input Error");
+            //}
         } else {
-            NotificationManager.error("Please check your Login", "Input Error");
+            //NotificationManager.error("Please check your Login", "Input Error");
         }
 
     }

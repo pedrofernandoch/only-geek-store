@@ -234,7 +234,7 @@ a {
 }
 a:hover {
      transition-duration: 0.4s;
-     color:#333;
+     color: #f55d2c;
 }
 a, a:hover {
      text-decoration: none;
@@ -268,6 +268,11 @@ a:focus {
 .btn-secondary {
     background: linear-gradient(to right, rgba(230, 92, 91, 0.9), rgba(245, 93, 44, 0.9)) ;
     /* background: #e96125 none repeat scroll 0 0 !important; */
+}
+.btn-secondarycart{
+    /* float: right; */
+    background: linear-gradient(to right, rgba(230, 92, 91, 0.9), rgba(245, 93, 44, 0.9)) ;
+    /* position: absolute; */
 }
 .text-secondary{
 	color:#e96125 !important;
@@ -388,6 +393,11 @@ a:focus {
 .osahan-menu .navbar-brand:hover {
     background: #384042 none repeat scroll 0 0;
 }
+
+.navbarNavDropdown{
+    position: absolute;
+}
+
 .main-nav-right .btn {
     border-radius: 0 !important;
     border-right: 1px solid #384042;
@@ -500,9 +510,17 @@ a:focus {
     position: relative;
 }
 
-.nav__item{
+.nav__item a{
     position: relative;
+    color: var(--white);
+    font-size:14px 
 }
+
+.nav__list{
+    position: relative;
+    display: inline-block;
+}
+
 /* Link Menu */
 .osahan-menu-2 {
     background: #fff none repeat scroll 0 0 !important;
@@ -536,7 +554,7 @@ a:focus {
 }
 .osahan-menu-2 .nav-link:hover {
     background: #f4f4f4 none repeat scroll 0 0;
-    color: #333 !important;
+    color: #f55d2c !important;
 }
 /* Category Slider */
 .category-item img {
@@ -965,7 +983,7 @@ body.toggled::after {
     padding: 6px 13px;
 }
 .shop-detail-right h2 {
-    font-size: 24px;
+    font-size: 36px;
     font-weight: 700;
     text-align: left;
     color: #2b2f4c;

@@ -6,7 +6,7 @@ import parse from 'html-react-parser';
 import { connect } from 'react-redux';
 import { addToCart } from '../../../store/actions/cartActions';
 import producstData from '../products/producstData';
-import './index.css'
+import './single-product.css'
 class Singleproduct extends Component {
     constructor(props) {
         super(props);
@@ -16,10 +16,10 @@ class Singleproduct extends Component {
     }
     async componentDidMount() {
         window.scrollTo(0, 0)
-        // let url = window.location.href.split('/');
-        // var lastSegment = url.pop() || url.pop();
+        let url = window.location.href.split('/');
+        var lastSegment = url.pop() || url.pop();
         // let list = await GetProductDetails.getProductById(lastSegment);
-        this.setState({ product: producstData[0] })
+        this.setState({ product: producstData[lastSegment || 0] })
     }
     render() {
         const { product } = this.state;
@@ -28,7 +28,7 @@ class Singleproduct extends Component {
                 return (
                     <div id="sync1" className="owl-carousel">
                         <div className="item">
-                            <img src={product.productphotos[i].imgUrl} />
+                            <img src={product.productphotos[i].imgUrl} alt={product.desc} />
                         </div>
                     </div>
                 );
@@ -42,16 +42,15 @@ class Singleproduct extends Component {
         };
         return (
             <div>
-                <section className="pt-3 pb-3 page-info section-padding border-bottom bg-white single-product-header-bk">
+                <section className="pt-3 pb- page-info section-padding border-bottom bg-white single-product-header-bk">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-12">
-                                <a href="#"><strong><span className="mdi mdi-home" /> Home</strong></a> <span className="mdi mdi-chevron-right" /> <a href="#">Fruits &amp; Vegetables</a> <span className="mdi mdi-chevron-right" /> <a href="#">Fruits</a>
+                                <a href="/"><strong><span className="mdi mdi-home" /> Home</strong></a> <span className="mdi mdi-chevron-right" /> <a href="/#products">Products</a> <span className="mdi mdi-chevron-right" /> <a href="/">{product.category}</a>
                             </div>
                         </div>
                     </div>
                 </section>
-
                 <section className="shop-single section-padding pt-3">
                     <div className="container">
                         {
@@ -66,7 +65,7 @@ class Singleproduct extends Component {
                                                             product.productphotos.map((r, index) => {
                                                                 return (
                                                                     <div key={index}>
-                                                                        <img alt src={r.imgUrl} className="img-fluid img-center" />
+                                                                        <img src={"../../../../../" + r.imgUrl} className="img-fluid img-center" alt={product.desc} />
                                                                     </div>
                                                                 )
                                                             })
@@ -80,21 +79,22 @@ class Singleproduct extends Component {
                                     </div>
                                     <div className="col-md-6">
                                         <div className="shop-detail-right">
-                                            <span className="badge badge-success">{product.discountPer}% OFF</span>
-                                            <h2>{product.name}</h2>
-                                            <h6><strong><span className="mdi mdi-approval" /> Available in</strong> - {product.unitSize}</h6>
-                                            <div className="pdp-product__old-price">
-                                                <span className="space__right--2-unit">Product MRP:</span><span className="regular-price">&#x20B9;{product.price}</span>
+                                            <div class="block">
+                                                <span className="badge badge-success">{product.discountPer}% OFF</span>
+                                                <h2>{product.name}</h2>
+                                                <h6><strong><span className="mdi mdi-approval" /> In stock</strong> - {product.unitSize}</h6>
+                                                <div className="pdp-product__old-price">
+                                                    <span className="space__right--2-unit">Product MRP:</span><span className="regular-price">$ {product.price}</span>
+                                                </div>
+
+                                                <div className="pdp-product__new-price">
+                                                    <span className="space__right--2-unit">Selling price:</span>
+                                                    <span className="pdp-product__price--new">$ {product.netPrice}</span>
+                                                    <div className="pdp-product__tax-disclaimer">(Inclusive of all taxes)</div>
+                                                </div>
                                             </div>
 
-                                            <div className="pdp-product__new-price">
-                                                <span className="space__right--2-unit">Selling price:</span>
-                                                <span className="pdp-product__price--new">&#x20B9;{product.netPrice}</span>
-                                                <div className="pdp-product__tax-disclaimer">(Inclusive of all taxes)</div>
-                                            </div>
-
-                                            <button type="button" className="btn btn-secondary btn-lg" onClick={() => this.props.addToCart(product)}><i className="mdi mdi-cart-outline" /> Add To Cart</button>
-                                            <h6 className="mb-3 mt-4">Why shop from Groci?</h6>
+                                            <button type="button" className="btn btn-secondarycart btn-lg" onClick={() => this.props.addToCart(product)}><i className="mdi mdi-cart-outline" /> Add To Cart</button>
                                             <div className="row">
                                                 <div className="col-md-12">
                                                     <div className="feature-box">
@@ -129,7 +129,6 @@ class Singleproduct extends Component {
                                 </div>
                                 : "Loading"
                         }
-
                     </div>
                 </section>
             </div>

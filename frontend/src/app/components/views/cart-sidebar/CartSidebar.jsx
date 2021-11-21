@@ -35,7 +35,7 @@ class Cartsidebar extends Component {
                                             <ul className="kggrm-now">
                                                 <li>
                                                     <input type="radio" id="a1" name="cart1" />
-                                                    <label >{row.unitSize}</label>
+                                                    In stock: <label >{row.stock}</label>
                                                 </li>
                                             </ul>
                                         </div>

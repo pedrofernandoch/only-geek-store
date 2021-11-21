@@ -35,3 +35,41 @@
     margin-right: 10px;
     margin-top: 1px;
 }
+
+.offer-price{
+    text-align: left;
+}
+
+.product-body{
+    font-weight: bold;
+}
+
+.more-product-btn{
+    float: left;
+    display: block;
+}
+
+.more-product-btn{
+    padding-top: 1rem;
+    display: inline-block;
+    margin-left: 45%;
+}
+
+.show-more-btn {
+    padding-top: 1rem;
+    font-size: 14px;
+    font-weight: 500;
+    width: 110px;
+    padding: 10px 0;
+    text-align: center;
+    color: var(--white);
+    background: var(--ocean-blue);
+    border-radius: 5px;
+    border: 1px solid var(--ocean-blue);
+}
+
+.show-more-btn .hover-btn:hover {
+    color: var(--ocean-blue);
+    background-color: var(--orange);
+    border: 1px solid var(--orange);
+}
