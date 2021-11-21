@@ -39,11 +39,9 @@ Pedro Fernando Christofoletti dos Santos  - 11218560<br>
 * The system must provide accessibility requirements and provide good usability. 
 * The system must be responsive.
 * The system must provide filtering functionality to choose products
-* The system should offer options for applying coupons when making a purchase
 * Customers can track the shipment of their order through the system
 * Customers can have a Wish list
 * News board from the Geek World
-* Product suggestion based on recent purchases
 * User area 
 
 ## Project Description
@@ -54,7 +52,7 @@ Pedro Fernando Christofoletti dos Santos  - 11218560<br>
 
 ## Comments About the Code
 
-xxxxxxx
+No comments yet
 
 ## Test Plan
 
@@ -78,7 +76,13 @@ git clone https://github.com/pedrofernandoch/only-geek-store.git
 cd only-geek-store/frontend
 ```
 
-In the project directory, you can run:
+In the project directory, you need to run:
+
+### `yarn install`
+
+Install all project dependencies
+
+To view the project in the browser you have two options:
 
 ### `yarn start`
 
@@ -87,10 +91,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `yarn install`
-
-Install all project dependencies
 
 ### `yarn build`
 
@@ -107,7 +107,7 @@ One of the group’s problems was the overlapping of CSS files, which complicate
 
 ## Comments
 
-xxxxxxx
+No comments yet
 
 ## License
 
