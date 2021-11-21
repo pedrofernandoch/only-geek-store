@@ -70,7 +70,7 @@ xxxxxxx
 
 ## Problems
 
-xxxxxxx
+One of the group’s problems was the overlapping of CSS files, which complicated the development of the frontend side of the application. 
 
 ## Comments
 
