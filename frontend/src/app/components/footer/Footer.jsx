@@ -3,56 +3,53 @@ import "./footer.css"
 
 export default class Footer extends Component {
     render() {
-        console.log("Footer");
         return (
-            <div id="footer" class="section footer">
-                <div class="container">
-                    <div class="footer__top">
-                        <div class="footer-top__box">
+            <footer id="footer" className="section footer">
+                <div className="container">
+                    <div className="footer__top">
+                        <div className="footer-top__box">
                             <h3>EXTRAS</h3>
-                            <a href="/">Brands</a>
-                            <a href="/">Gift Certificates</a>
-                            <a href="/">Affiliate</a>
-                            <a href="/">Specials</a>
-                            <a href="/">Site Map</a>
+                            <a href="#footer">Brands</a>
+                            <a href="#footer">Gift Certificates</a>
+                            <a href="#footer">Affiliate</a>
+                            <a href="#footer">Specials</a>
+                            <a href="#footer">Site Map</a>
                         </div>
-                        <div class="footer-top__box">
+                        <div className="footer-top__box">
                             <h3>INFORMATION</h3>
-                            <a href="/">About Us</a>
-                            <a href="/">Privacy Policy</a>
-                            <a href="/">Terms & Conditions</a>
-                            <a href="/">Contact Us</a>
-                            <a href="/">Site Map</a>
+                            <a href="#footer">About Us</a>
+                            <a href="#footer">Privacy Policy</a>
+                            <a href="#footer">Terms & Conditions</a>
+                            <a href="#footer">Contact Us</a>
+                            <a href="#footer">Site Map</a>
                         </div>
-                        <div class="footer-top__box">
+                        <div className="footer-top__box">
                             <h3>MY ACCOUNT</h3>
-                            <a href="/">My Account</a>
-                            <a href="/">Order History</a>
-                            <a href="/">Wish List</a>
-                            <a href="/">Newsletter</a>
-                            <a href="/">Returns</a>
+                            <a href="#footer">My Account</a>
+                            <a href="#footer">Order History</a>
+                            <a href="#footer">Wish List</a>
+                            <a href="#footer">Newsletter</a>
+                            <a href="#footer">Returns</a>
                         </div>
-                        <div class="footer-top__box">
+                        <div className="footer-top__box">
                             <h3>CONTACT US</h3>
-                            <div class="footer-text">
+                            <div>
                                 <span>
                                     <svg>
                                         <use xlinkHref="img/sprite.svg#icon-location"></use>
                                     </svg>
                                 </span>
-                                Av. Trab. São Carlense,
-                                400 - Centro, São Carlos -
-                                SP, 13566-590. Brazil
+                                Av. Trab. São Carlense, 400 - Centro, São Carlos - SP, 13566-590. Brazil
                             </div>
-                            <div class="footer-text">
+                            <div>
                                 <span>
                                     <svg>
                                         <use xlinkHref="img/sprite.svg#icon-envelop"></use>
                                     </svg>
                                 </span>
-                                contact @onlygeek.com
+                                contact@onlygeek.com
                             </div>
-                            <div class="footer-text">
+                            <div>
                                 <span>
                                     <svg>
                                         <use xlinkHref="img/sprite.svg#icon-phone"></use>
@@ -60,7 +57,7 @@ export default class Footer extends Component {
                                 </span>
                                 +55 (16)3356-9570
                             </div>
-                            <div class="footer-text">
+                            <div>
                                 <span>
                                     <svg>
                                         <use xlinkHref="img/sprite.svg#icon-paperplane"></use>
@@ -71,11 +68,13 @@ export default class Footer extends Component {
                         </div>
                     </div>
                 </div>
-                <div class="footer__bottom">
-                    <div class="footer-bottom__box">
+                <div className="footer__bottom">
+                    <div className="footer-bottom__box">
+                    </div>
+                    <div className="footer-bottom__box">
                     </div>
                 </div>
-            </div>
+            </footer >
         )
     }
 }

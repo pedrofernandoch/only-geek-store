@@ -4,29 +4,29 @@ import "./collection.css"
 export default class Collection extends Component {
     render() {
         return (
-            <section id="collection" class="section collection">
-                <div class="collection__container" data-aos="fade-up" data-aos-duration="1200">
-                    <div class="collection__box">
-                        <div class="img__container">
-                            <img class="collection_02" src="img/collection/goku_adidas.png" alt="Goku with Adidas Clothes" />
+            <section id="collection" className="section collection">
+                <div className="collection__container" data-aos="fade-up" data-aos-duration="1200">
+                    <div className="collection__box">
+                        <div className="img__container">
+                            <img className="collection_02" src="img/collection/goku_adidas.png" alt="Goku with Adidas Clothes" />
                         </div>
-                        <div class="collection__contentc">
-                            <div class="collection__data">
+                        <div className="collection__content">
+                            <div className="collection__data">
                                 <span>New releases in all sizes</span>
                                 <h1>CLOTHES</h1>
-                                <a href="#shop">SHOP NOW</a>
+                                <a href="#products">SHOP NOW</a>
                             </div>
                         </div>
                     </div>
-                    <div class="collection__box">
-                        <div class="img__container">
-                            <img class="collection_01" src="img/collection/spider-man.png" alt="Spider Man" />
+                    <div className="collection__box">
+                        <div className="img__container">
+                            <img className="collection_01" src="img/collection/spider-man.png" alt="Spider Man" />
                         </div>
-                        <div class="collection__contentc">
-                            <div class="collection__data">
+                        <div className="collection__content">
+                            <div className="collection__data">
                                 <span>Games for all devices</span>
                                 <h1>GAMES</h1>
-                                <a href="/">SHOP NOW</a>
+                                <a href="#products">SHOP NOW</a>
                             </div>
                         </div>
                     </div>

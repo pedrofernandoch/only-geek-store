@@ -42,7 +42,7 @@ class Products extends Component {
     render() {
         let { list, isloaded, limit } = this.state;
         return (
-            <div>
+            <div className="products-container">
                 <div id="products" className="all-product-grid">
                     <div className="container">
                         <div className="row">
@@ -98,6 +98,7 @@ class Products extends Component {
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <br />
                                                 </div>
                                             ))}
                                     </div>

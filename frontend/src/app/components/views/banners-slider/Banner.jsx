@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 export default class Banner extends Component {
     render() {
         return (
-            <li>
+            <li class="glide__slide">
                 <div className="hero__center">
                     <div className="hero__left">
                         <span>{this.props.title}</span>

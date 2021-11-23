@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import Slider from "react-slick";
 import Testimonial from './Testimonial';
 import testimonialData from './testimonialData'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "./testimonial-slider.css";
 export default class Testimonialslider extends Component {
 
@@ -12,8 +9,8 @@ export default class Testimonialslider extends Component {
         for (var i = 0; i < testimonialData.length; i++) {
             testimonialComponents.push(
                 <div key={i}>
-                    <Testimonial title={testimonialData[i].title} bigTitle={testimonialData[i].bigTitle}
-                        description={testimonialData[i].description} imgName={testimonialData[i].imgName} imgAlt={testimonialData[i].imgAlt} />
+                    <Testimonial name={testimonialData[i].name} job={testimonialData[i].job}
+                        text={testimonialData[i].text} imgName={testimonialData[i].imgName} imgAlt={testimonialData[i].imgAlt} />
                 </div>
             )
         }
@@ -21,21 +18,24 @@ export default class Testimonialslider extends Component {
     }
 
     render() {
-        var settings = {
-            dots: false,
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        };
-
         return (
-            <div className="hero">
-                <ul className="glide__slides">
-                    <Slider {...settings}>
-                        {this.generateTestimonialComponents()}
-                    </Slider>
-                </ul>
-            </div>
+            <section className="section testimonial" id="testimonial">
+                <div className="testimonial__container">
+                    <div className="glide" id="glide_4">
+                        <div className="glide__track" data-glide-el="track">
+                            <ul className="glide__slides">
+                                {this.generateTestimonialComponents()}
+                            </ul>
+                        </div>
+                        <div className="glide__bullets" data-glide-el="controls[nav]">
+                            <button className="glide__bullet" data-glide-dir="=0"></button>
+                            <button className="glide__bullet" data-glide-dir="=1"></button>
+                            <button className="glide__bullet" data-glide-dir="=2"></button>
+                            <button className="glide__bullet" data-glide-dir="=3"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
         )
     }
 }

@@ -36,16 +36,12 @@ class Navigation extends Component {
     }
     render() {
         let { token, userName, searchtxt } = this.state;
-        console.log("Header");
         return (
             <div>
                 <header id="header" className="header clearfix">
                     <nav className="navbar navbar-light navbar-expand-lg bg-faded osahan-menu">
                         <div className="container-fluid">
                             <a className="navbar-brand" href="/"> <img src="/img/onlyGeek/logo.png" alt="logo" /> </a>
-                            <button className="navbar-toggler navbar-toggler-white" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                                <span className="navbar-toggler-icon" />
-                            </button>
                             <div className="navbar-collapse" id="navbarNavDropdown">
                                 <div className="navbar-nav mr-auto mt-2 mt-lg-0 margin-auto top-categories-search-main">
                                     <div className="top-categories-search" onSubmit={this.handleClickSearch}>
@@ -81,20 +77,6 @@ class Navigation extends Component {
                                     </ul>
                                 </div>
                             </div>
-                            <ul class="nav__list">
-                                <li class="nav__item">
-                                    <a href="#banner" class="nav__link scroll-link">Home</a>
-                                </li>
-                                <li class="nav__item">
-                                    <a href="#products" class="nav__link scroll-link">Products</a>
-                                </li>
-                                <li class="nav__item">
-                                    <a href="#news" class="nav__link scroll-link">News</a>
-                                </li>
-                                <li class="nav__item">
-                                    <a href="#facility" class="nav__link scroll-link">Facilities</a>
-                                </li>
-                            </ul>
                         </div>
                     </nav>
                 </header>

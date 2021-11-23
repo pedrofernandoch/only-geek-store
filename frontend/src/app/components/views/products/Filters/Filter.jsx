@@ -45,11 +45,11 @@ export default class Filterbycategory extends Component {
         const { list } = this.state;
         return (
             <div>
-                <Button togglefilter="offcanvas1" className="filter-btn pull-bs-canvas-right" variant="contained" style={{ backgroundColor: "var(--green-blue)", color: "var(--primaryColor)" }}>Filters</Button>
+                <Button togglefilter="offcanvas1" className="filter-btn pull-bs-canvas-right" variant="contained" style={{ fontWeight: "bold", fontSize: "12px", backgroundColor: "var(--green-blue)", color: "var(--primaryColor)" }}>Filters</Button>
                 <div className="bs-canvas bs-canvas-right position-fixed bg-cart h-100">
-                    <div className="bs-canvas-header side-cart-header p-3 ">
+                    <div className="bs-canvas-header side-cart-header p-3 " >
                         <div className="d-inline-block  main-cart-title">Filters</div>
-                        <button type="button" className="bs-canvas-close close" aria-label="Close" ><i className="mdi mdi-close" /></button>
+                        <button type="button" className="bs-canvas-close close" aria-label="Close"><i className="mdi mdi-close" /></button>
                     </div>
                     <div className="bs-canvas-body filter-body">
                         {

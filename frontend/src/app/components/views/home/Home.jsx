@@ -1,19 +1,25 @@
 import React, { Component } from 'react'
-import Bannerslider from '../banners-slider/BannersSlider';
-import Testimonialslider from '../testimonial/TestimonialSlider';
+import BannersSlider from '../banners-slider/BannersSlider';
 import Collection from '../collection/Collection';
-import GeekNewsSlider from '../geekNews/GeekNewsSlider';
 import Products from '../products/Products';
+import Testimonialslider from '../testimonial/TestimonialSlider';
+import GeekNewsSlider from '../geekNews/GeekNewsSlider';
+import Facility from '../../facility/Facility';
 
 export default class Home extends Component {
     render() {
         return (
-            <div className="wrapper">
-                <Bannerslider />
-                <Collection />
-                <Products />
-                <Testimonialslider />
-                <GeekNewsSlider />
+            <div>
+                <BannersSlider />
+                <main id="main">
+                    <div className="container">
+                        <Collection />
+                        <Products />
+                    </div>
+                    <Testimonialslider />
+                    <GeekNewsSlider />
+                    <Facility />
+                </main>
             </div>
         )
     }

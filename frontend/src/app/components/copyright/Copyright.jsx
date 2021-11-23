@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-
 export default class Copyright extends Component {
     render() {
-        console.log("Copyright");
         return (
             <div>
                 <section className="pt-4 pb-4 footer-bottom" style={{ paddingLeft: "36%" }}>

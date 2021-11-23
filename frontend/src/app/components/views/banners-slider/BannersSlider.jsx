@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import Slider from "react-slick";
 import Banner from './Banner';
 import bannerData from './bannerData'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "./banners-slider.css";
 export default class Bannerslider extends Component {
 
@@ -21,20 +18,34 @@ export default class Bannerslider extends Component {
     }
 
     render() {
-        var settings = {
-            dots: false,
-            infinite: true,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        };
-
         return (
-            <div id="banner" className="hero">
-                <ul className="glide__slides">
-                    <Slider {...settings}>
-                        {this.generateBannerComponents()}
-                    </Slider>
-                </ul>
+            <div className="hero">
+                <div className="glide" id="glide_1">
+                    <div className="glide__track" data-glide-el="track">
+                        <ul className="glide__slides">
+                            {this.generateBannerComponents()}
+                        </ul>
+                    </div>
+                    <div className="glide__bullets" data-glide-el="controls[nav]">
+                        <button className="glide__bullet" data-glide-dir="=0"></button>
+                        <button className="glide__bullet" data-glide-dir="=1"></button>
+                        <button className="glide__bullet" data-glide-dir="=2"></button>
+                        <button className="glide__bullet" data-glide-dir="=2"></button>
+                    </div>
+
+                    <div className="glide__arrows" data-glide-el="controls">
+                        <button className="glide__arrow glide__arrow--left" data-glide-dir="<">
+                            <svg>
+                                <use xlinkHref="img/sprite.svg#icon-arrow-left2"></use>
+                            </svg>
+                        </button>
+                        <button className="glide__arrow glide__arrow--right" data-glide-dir=">">
+                            <svg>
+                                <use xlinkHref="img/sprite.svg#icon-arrow-right2"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         )
     }
