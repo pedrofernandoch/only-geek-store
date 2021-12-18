@@ -6,13 +6,13 @@ module.exports = app => {
         if (req.params.id) status.id = req.params.id
 
         try {
-            existsOrError(status.name, 'Nome não informado')
+            existsOrError(status.name, 'Name not found')
             const statusFromDB = await app.db('status')
                 .where('status.name', '=', status.name).first('*')
             if (!status.id) {
-                notExistsOrError(statusFromDB, 'Status já cadastrado')
+                notExistsOrError(statusFromDB, 'Status not found')
             } else {
-                if (statusFromDB && status.id != statusFromDB.id) throw 'Status já cadastrado'
+                if (statusFromDB && status.id != statusFromDB.id) throw 'Status alredy registered'
             }
         } catch (msg) {
             return res.status(400).send(msg)
@@ -32,21 +32,19 @@ module.exports = app => {
                 .catch(err => res.status(500).send(err))
         }
 
-        const food = new app.db.product(request.body);
-
-        app.db.product.save()
+        const newProduct = new app.db.product(request.body);
 
         try {
-            await food.save();
-            response.send(food);
+            await newProduct.save();
+            response.send(newProduct);
         } catch (error) {
             response.status(500).send(error);
         }
 
         try {
-            await foodModel.findByIdAndUpdate(request.params.id, request.body);
-            await foodModel.save();
-            response.send(food);
+            await app.db.product.findByIdAndUpdate(request.params.id, request.body);
+            await app.db.product.save();
+            response.send(newProduct);
         } catch (error) {
             response.status(500).send(error);
         }
@@ -58,10 +56,10 @@ module.exports = app => {
             .then(status => res.json(status))
             .catch(err => res.status(500).send(err))
 
-        const foods = await foodModel.find({});
+        const findProduct = await app.db.product.find({});
 
         try {
-            response.send(foods);
+            response.send(findProduct);
         } catch (error) {
             response.status(500).send(error);
         }
@@ -69,11 +67,11 @@ module.exports = app => {
 
     const remove = async (req, res) => {
         try {
-            const rowsDeleted = await app.db('status')
+            const rowsDeleted = await app.db.product('status')
                 .where('status.id', '=', req.params.id).del()
 
             try {
-                existsOrError(rowsDeleted, 'Status não encontrado')
+                existsOrError(rowsDeleted, 'Status not found')
             } catch (msg) {
                 return res.status(400).send(msg)
             }
@@ -85,9 +83,9 @@ module.exports = app => {
 
 
         try {
-            const food = await foodModel.findByIdAndDelete(request.params.id);
+            const newProduct = await app.db.product.findByIdAndDelete(request.params.id);
 
-            if (!food) response.status(404).send("No item found");
+            if (!newProduct) response.status(404).send("No item found");
             response.status(200).send();
         } catch (error) {
             response.status(500).send(error);

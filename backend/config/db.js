@@ -100,14 +100,32 @@ const ProductSchema = new mongoose.Schema({
     },
   });
   
+  const SubCateogrySchema = new mongoose.Schema({
+    id: {
+      type: Number,
+      required: true,
+      trim: true,
+      index: true,
+      unique: true,
+    },
+    name: {
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true,
+    },
+  });
+
   const Product = mongoose.model("Product", ProductSchema);
   const Order = mongoose.model("Product", OrderSchema);
   const Category = mongoose.model("Product", CateogrySchema);
+  const SubCategory = mongoose.model("Product", SubCateogrySchema);
 
   const db = {
     product: Product,
     order: Order,
-    category: Category
+    category: Category,
+    subCategory: SubCategory
   }
 
 module.exports = db;
