@@ -1,53 +1,102 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 //Conctar banco
 mongoose.connect('mongodb+srv://mari:mari@scc.x5pvr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 
+
 const ProductSchema = new mongoose.Schema({
+  id: {
+    type: Number,
+    required: true,
+    trim: true,
+    index: true,
+    unique: true,
+    },
     name: {
       type: String,
       required: true,
       trim: true,
       lowercase: true,
     },
-    calories: {
+    category:[{
+      type: String,
+      required: true
+    }],
+    description:{
+      type: String,
+      require: true,
+      trim: true
+    },
+    price: {
       type: Number,
+      required: true,
       default: 0,
       validate(value) {
-        if (value < 0) throw new Error("Negative calories aren't real.");
+        if (value < 0) throw new Error("Invalid price.");
+      },
+    },
+    stock: {
+      type: Number,
+      required: true,
+      default: 0,
+      validate(value) {
+        if (value = 0) throw new Error("Restock.");
+      },
+    },
+    sold: {
+      type: Number,
+      required: true,
+      default: 0,
+      validate(value) {
+        if (value < 0) throw new Error("Invalid value.");
       },
     },
   });
 
   const OrderSchema = new mongoose.Schema({
-    name: {
-      type: String,
+    id: {
+      type: Number,
       required: true,
       trim: true,
-      lowercase: true,
+      index: true,
+      unique: true,
     },
-    calories: {
+    status:{
+      type: String,
+      require: true,
+      trim: true
+    },
+    user_id: {
       type: Number,
+      required: true,
+      trim: true,
+      index: true,
+      unique: true,
+    },
+    price: {
+      type: Number,
+      required: true,
       default: 0,
       validate(value) {
-        if (value < 0) throw new Error("Negative calories aren't real.");
+        if (value < 0) throw new Error("Invalid price.");
       },
     },
   });
 
   const CateogrySchema = new mongoose.Schema({
+    id: {
+      type: Number,
+      required: true,
+      trim: true,
+      index: true,
+      unique: true,
+    },
     name: {
       type: String,
       required: true,
       trim: true,
       lowercase: true,
-    },
-    calories: {
-      type: Number,
-      default: 0,
-      validate(value) {
-        if (value < 0) throw new Error("Negative calories aren't real.");
-      },
     },
   });
   
