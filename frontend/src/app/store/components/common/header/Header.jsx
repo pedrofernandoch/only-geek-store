@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import "./header.css"
-
+import { setAdminSession } from '../../../../storeOrAdminActions'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 class Header extends Component {
 
     render() {
@@ -45,6 +47,11 @@ class Header extends Component {
                                 </div>
 
                                 <div className="nav__icons">
+
+                                    <button className="icon__item" onClick={e => this.props.setAdminSession(true)}>
+                                        Go to Admin
+                                    </button>
+
                                     <a href="login.html" className="icon__item">
                                         <svg className="icon__user">
                                             <use xlinkHref="img/sprite.svg#icon-user"></use>
@@ -63,6 +70,7 @@ class Header extends Component {
                                         </svg>
                                         <span id="cart__total">2</span>
                                     </a>
+
                                 </div>
                             </nav>
                         </div>
@@ -72,4 +80,9 @@ class Header extends Component {
         )
     }
 }
-export default Header
+
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    setAdminSession,
+}, dispatch)
+export default connect(null, mapDispatchToProps)(Header)

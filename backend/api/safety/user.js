@@ -1,12 +1,5 @@
-const bcrypt = require('bcryptjs')
-
 module.exports = app => {
     const { notExistsOrError, existsOrError, equalsOrError, validateEmail, validatePassword } = app.api.utils.validation
-
-    const encryptPassword = password => {
-        const salt = bcrypt.genSaltSync(10)
-        return bcrypt.hashSync(password, salt)
-    }
 
     const save = async (req, res) => {
         const user = { ...req.body }
@@ -38,7 +31,6 @@ module.exports = app => {
 
         delete user.confirmPassword
         if (!updatePassword) delete user.password
-        else user.password = encryptPassword(user.password)
 
         if (user._id || user._id === 0) {
             try {

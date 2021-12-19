@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
 import Store from './store/Store'
 import Admin from './admin/Admin'
 class StoreOrAdmin extends Component {
@@ -13,6 +13,5 @@ class StoreOrAdmin extends Component {
     }
 }
 
-// const mapStateToProps = state => ({ adminSession: state.auth.adminSession })
-// export default connect(mapStateToProps, null)(StoreOrAdmin)
-export default StoreOrAdmin
+const mapStateToProps = state => ({ adminSession: state.storeOrAdmin.adminSession })
+export default connect(mapStateToProps, null)(StoreOrAdmin)

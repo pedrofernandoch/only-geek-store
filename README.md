@@ -52,15 +52,27 @@ Pedro Fernando Christofoletti dos Santos  - 11218560<br>
 
 ## Comments About the Code
 
-No comments yet
+Some of the features such as the checkout page weren't implemented.
 
 ## Test Plan
 
 To test the api we will use postman and we will build a table of inputs and their expected outputs to validate the created functions. For the frontend, we will create possible paths between the application's routes ranging from product search and choice, addition to the cart, login or registration and finally the purchase checkout, as well as the crud of the admin page.
+The database will be created with MongoDb to provide NoSql storage and retrieval data system. Then routes connecting to the database’s tuples will be created in the backend so the admins can manage the store.
 
 ## Test Results
 
-xxxxxxx
+The first test is to verify the APIs :
+We used Postman to test the API for the methods save, delete and post. For this example, we utilized the ‘subCategory’ section.
+Input:
+
+Output:
+
+For the second one, we tested if it is possible to search for a product and add it to the shopping cart. For this test, we searched for the ‘xxxxx’ product and added it to the cart. 
+
+In the third test, we tried to perform a registration/login and purchase the product that we previously added to the cart. So, we tried to perform login and proceed to the ‘checkout’ button present in the cart sidebar. After that, we added the necessary information and completed the purchase.
+
+For the last test, we logged in as an admin and tried to do some operations (save, get and delete) in the data table.
+
 
 ## Build Procedures
 
@@ -103,7 +115,7 @@ Now you just need to setup an HTTP server that delivers the index.html generated
 
 ## Problems
 
-One of the group’s problems was the overlapping of CSS files, which complicated the development of the frontend side of the application. 
+The overlapping CSS files complicated the development at some point. When connecting to the database, MongoDB didn’t recognize the informed IP (solved). Also, the group had some problems operating the database since it was the first time for us using a NoSql database. 
 
 ## Comments
 

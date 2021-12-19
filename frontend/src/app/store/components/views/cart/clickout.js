@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { useEffect } from "react";
+import { useEffect } from "react"
 
 export default (ref, handler) => {
   useEffect(() => {
