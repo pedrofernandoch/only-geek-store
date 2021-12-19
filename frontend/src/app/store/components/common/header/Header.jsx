@@ -6,60 +6,60 @@ class Header extends Component {
     render() {
         return (
             <div>
-                <header id="header" class="header">
-                    <div class="navigation">
-                        <div class="container">
-                            <nav class="nav">
-                                <div class="nav__hamburger">
+                <header id="header" className="header">
+                    <div className="navigation">
+                        <div className="container">
+                            <nav className="nav">
+                                <div className="nav__hamburger">
                                     <svg>
-                                        <use xlinkHref="./images/sprite.svg#icon-menu"></use>
+                                        <use xlinkHref="img/sprite.svg#icon-menu"></use>
                                     </svg>
                                 </div>
-                                <div class="nav__logo">
-                                    <a href="/" class="scroll-link"><img src="images/onlyGeek/logo.png" alt="" /></a>
+                                <div className="nav__logo">
+                                    <a href="/" className="scroll-link"><img src="img/onlyGeek/logo.png" alt="" /></a>
                                 </div>
 
-                                <div class="nav__menu">
-                                    <div class="menu__top">
-                                        <span class="nav__category">Only Geek</span>
-                                        <a href="/" class="close__toggle">
+                                <div className="nav__menu">
+                                    <div className="menu__top">
+                                        <span className="nav__category">Only Geek</span>
+                                        <a href="/" className="close__toggle">
                                             <svg>
-                                                <use xlinkHref="./images/sprite.svg#icon-cross"></use>
+                                                <use xlinkHref="img/sprite.svg#icon-cross"></use>
                                             </svg>
                                         </a>
                                     </div>
-                                    <ul class="nav__list">
-                                        <li class="nav__item">
-                                            <a href="#header" class="nav__link scroll-link">Home</a>
+                                    <ul className="nav__list">
+                                        <li className="nav__item">
+                                            <a href="#header" className="nav__link scroll-link">Home</a>
                                         </li>
-                                        <li class="nav__item">
-                                            <a href="#category" class="nav__link scroll-link">Categories</a>
+                                        <li className="nav__item">
+                                            <a href="#category" className="nav__link scroll-link">Categories</a>
                                         </li>
-                                        <li class="nav__item">
-                                            <a href="#news" class="nav__link scroll-link">News</a>
+                                        <li className="nav__item">
+                                            <a href="#news" className="nav__link scroll-link">News</a>
                                         </li>
-                                        <li class="nav__item">
-                                            <a href="#contact" class="nav__link scroll-link">Contact</a>
+                                        <li className="nav__item">
+                                            <a href="#facility" className="nav__link scroll-link">Facilities</a>
                                         </li>
                                     </ul>
                                 </div>
 
-                                <div class="nav__icons">
-                                    <a href="login.html" class="icon__item">
-                                        <svg class="icon__user">
-                                            <use xlinkHref="./images/sprite.svg#icon-user"></use>
+                                <div className="nav__icons">
+                                    <a href="login.html" className="icon__item">
+                                        <svg className="icon__user">
+                                            <use xlinkHref="img/sprite.svg#icon-user"></use>
                                         </svg>
                                     </a>
 
-                                    <a href="/" class="icon__item">
-                                        <svg class="icon__search">
-                                            <use xlinkHref="./images/sprite.svg#icon-search"></use>
+                                    <a href="/" className="icon__item">
+                                        <svg className="icon__search">
+                                            <use xlinkHref="img/sprite.svg#icon-search"></use>
                                         </svg>
                                     </a>
 
-                                    <a href="cart.html" class="icon__item">
-                                        <svg class="icon__cart">
-                                            <use xlinkHref="./images/sprite.svg#icon-shopping-basket"></use>
+                                    <a href="cart.html" className="icon__item">
+                                        <svg className="icon__cart">
+                                            <use xlinkHref="img/sprite.svg#icon-shopping-basket"></use>
                                         </svg>
                                         <span id="cart__total">2</span>
                                     </a>

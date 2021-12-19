@@ -1,40 +1,27 @@
 import React, { Component } from 'react'
 import TableView from '../table/TableView'
+import Avatar from 'react-avatar'
 
 const productColumns = [
-  { title: "Photo", field: "photo", hidden: true },
-  { title: "ID", field: "id" },
+  { title: "ID", field: "_id", hidden: true },
+  { title: "Photo", field: "photo", render: rowData =>  <Avatar round={true} size="70" src={rowData.photo} />},
   { title: "Name", field: "name" },
   { title: "Category", field: "category" },
+  { title: "Subcategory", field: "sub_category" },
   { title: "Description", field: "description" },
   { title: "Price", field: "price" },
   { title: "Stock", field: "stock" },
   { title: "Units Sold", field: "units_sold" },
 ]
-
-const detailPanel = data => {
-  return (
-    <iframe
-      title={data.rowData.name}
-      width="100%"
-      height="315"
-      src={data.rowData.photo}
-      frameBorder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    />
-  )
-}
-
-class CourseView extends Component {
+class ProductView extends Component {
 
   render() {
     return (
-      <TableView detailPanel={detailPanel} model="course" field="name" columns={productColumns} functions={{ 
+      <TableView model="product" field="name" columns={productColumns} functions={{ 
         setStateValue: this.props.setStateValue,
         setModalVisibility: this.props.setModalVisibility }} />
     )
   }
 }
 
-export default CourseView
+export default ProductView

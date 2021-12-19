@@ -1,7 +1,7 @@
 import { SET_PRODUCT_TO_INITIAL_STATE, SET_CURRENT_PRODUCT } from '../../utils/actionTypes'
 
 const INITIAL_STATE = {
-    productCourse: {}
+    currentProduct: {}
 }
 
 export default function productReducer(state = INITIAL_STATE, action) {

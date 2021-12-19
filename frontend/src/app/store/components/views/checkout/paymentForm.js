@@ -5,7 +5,11 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/checkbox';
 
-export default function paymentForm() {
+
+
+export default function paymentForm({
+  cardName,
+}) {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -20,6 +24,7 @@ export default function paymentForm() {
             fullWidth
             autoComplete="cc-name"
             variant="standard"
+            onChange={cardName => this.setState({ name: cardName })}
           />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -30,6 +35,7 @@ export default function paymentForm() {
             fullWidth
             autoComplete="cc-number"
             variant="standard"
+            onChange={cardNumber => this.setState({ name: cardNumber })}
           />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -40,6 +46,7 @@ export default function paymentForm() {
             fullWidth
             autoComplete="cc-exp"
             variant="standard"
+            onChange={expDate => this.setState({ name: expDate })}
           />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -51,6 +58,7 @@ export default function paymentForm() {
             fullWidth
             autoComplete="cc-csc"
             variant="standard"
+            onChange={cvv => this.setState({ name: cvv })}
           />
         </Grid>
         <Grid item xs={12}>

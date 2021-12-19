@@ -8,8 +8,9 @@ export function setUserToInitialState() {
 
 export function setUser(user) {
     const userData = {...user}
-    if ('tableData' in userData) delete userData.tableData
-    delete userData.registerDate
+    delete userData.tableData
+    delete userData.register_date
+    delete userData.password
     return {
         type: SET_CURRENT_USER,
         currentUser: userData

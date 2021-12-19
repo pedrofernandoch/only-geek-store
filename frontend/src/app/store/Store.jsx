@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import Header from './components/header/Header'
-import Copyright from './components/copyright/Copyright'
-import Footer from './components/footer/Footer'
+import Header from './components/common/header/Header'
+import Copyright from './components/common/copyright/Copyright'
+import Footer from './components/common/footer/Footer'
 import Home from './components/views/home/Home'
 import NotFound from './components/views/not-found/NotFound'
-import Messages from '../utils/messages/Messages'
+import Messanger from '../utils/messages/Messanger'
 export default class Store extends Component {
 
     render() {
@@ -21,7 +21,7 @@ export default class Store extends Component {
                     <br />
                     <Footer />
                     <Copyright />
-                    <Messages />
+                    <Messanger />
                 </div>
         )
     }

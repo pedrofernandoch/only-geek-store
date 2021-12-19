@@ -44,6 +44,7 @@ export default function Admin() {
                                     </Paper>
                                 </Grid>
                             </Grid>
+                            <br />
                             <Footer sx={{ pt: 4 }} />
                         </Container>
                     </Box>

@@ -14,6 +14,10 @@ import { ThemeProvider } from '@mui/material/styles'
 import { baseApiUrl } from '../../../utils/systemConstans'
 import { backdropStyles, paperStyles, formStyles, theme } from '../../assets/styles'
 import ProductForm from '../../product/ProductForm'
+import CategoryForm from '../../category/CategoryForm'
+import SubCategoryForm from '../../sub-category/SubCategoryForm'
+import UserForm from '../../user/UserForm'
+import OrderForm from '../../order/OrderForm'
 
 const styles = (theme) => ({
     root: {
@@ -40,6 +44,14 @@ class ModalForm extends Component {
         switch (model) {
             case 'product':
                 return <ProductForm />
+            case 'category':
+                return <CategoryForm />
+            case 'subcategory':
+                return <SubCategoryForm />
+            case 'user':
+                return <UserForm />
+            case 'order':
+                return <OrderForm />
             default:
                 return <CircularProgress color="inherit" />
         }
@@ -47,25 +59,13 @@ class ModalForm extends Component {
 
     onSubmit = async values => {
         const { model, setToInitalState } = this.props
-        let body = null
-        let id =  null
-        let method =  null
-        if(model === 'feedback'){
-            body = { feedback: values.feedback, id: values.id }
-            method = body.id ? 'put' : 'post'
-            id = body.id ? body.id + '/' + values.userId : values.userId
-        }else if(model === 'contact'){
-            body = { message: values.message, id: values.id }
-            method = body.id ? 'put' : 'post'
-            id = body.id ? body.id + '/' + values.userId : values.userId
-        }else{
-            body = { ...values }
-            id = body.id ? body.id : ''
-            method = body.id ? 'put' : 'post'
-        }
+        let body = { ...values }
+        let id = values._id === null || values._id === undefined ? '' : values._id
+        let method = id ? 'put' : 'post'
+        let apiUrl = model.charAt(model.length-1) === 'y' ? model.substring(0, model.length - 1)+'ies' : model + 's'
         if (body) {
             await this.setState({ showBackDrop: true })
-            axios[method](`${baseApiUrl}/${model}s/${id}`, body)
+            axios[method](`${baseApiUrl}/${apiUrl}/${id}`, body)
                 .then(async _ => {
                     await this.setState({ showBackDrop: false })
                     toastr.success('Success', 'Operation carried out successfully.')
@@ -100,7 +100,7 @@ class ModalForm extends Component {
                                     <Button style={{ color: '#363638' }} onClick={e => this.props.setToInitalState()}>Cancel</Button>
                                 </Grid>
                                 <Grid item xs={2}>
-                                    <Button type="submit" style={{ backgroundColor: '#ca0096', color: '#ffffff' }}>Save</Button>
+                                    <Button type="submit" style={{ backgroundColor: '#00171F', color: '#ffffff' }}>Save</Button>
                                 </Grid>
                             </Grid>
                         </form>
@@ -117,17 +117,7 @@ ModalForm.propTypes = {
     classes: PropTypes.object.isRequired,
 }
 const mapStateToProps = state => {
-    let initialValues = {...state[state.modal.model][`current${state.modal.model.charAt(0).toUpperCase() + state.modal.model.slice(1)}`]}
-    if (state.modal.model === 'feedback' || state.modal.model === 'contact'){
-        let user = {...state.user.currentUser}
-        if (user.id) {
-            user.userId = user.id
-            delete user.id
-        }
-        initialValues = { ...initialValues, ...user }
-        return { initialValues }
-    }else{
-        return { initialValues }
-    }
+    let initialValues = { ...state[state.modal.model][`current${state.modal.model.charAt(0).toUpperCase() + state.modal.model.slice(1)}`] }
+    return { initialValues }
 }
 export default compose(withStyles(styles, { name: 'ModalForm', withTheme: true }), connect(mapStateToProps, null))(ModalForm)

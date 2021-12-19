@@ -16,21 +16,22 @@ class TableView extends Component {
     }
 
     getData() {
-        axios.get(`${baseApiUrl}/${this.props.model}s`)
+        axios.get(`${baseApiUrl}/${this.props.apiUrl ? this.props.apiUrl : this.props.model + 's'}`)
             .then(result => {
                 let tableData = []
                 if (result.data && Array.isArray(result.data)) {
-                    if (this.props.model === 'contact' || 'feedback') {
-                        tableData = result.data.map(entity => {
-                            const user = { ...entity.user }
-                            user.userId = user.id
-                            delete user.id
-                            delete entity.user
-                            return { ...entity, ...user }
-                        })
-                    } else {
-                        tableData = result.data
-                    }
+                    // if (this.props.model === 'contact' || 'feedback') {
+                    //     tableData = result.data.map(entity => {
+                    //         const user = { ...entity.user }
+                    //         user.userId = user.id
+                    //         delete user.id
+                    //         delete entity.user
+                    //         return { ...entity, ...user }
+                    //     })
+                    // } else {
+                    //     tableData = result.data
+                    // }
+                    tableData = result.data
                 }
                 beautifyData(tableData)
                 this.setState({ data: tableData })
@@ -57,11 +58,11 @@ class TableView extends Component {
 
     onEditClick = (event, rowData) => {
         this.props.functions.setStateValue(rowData)
-        this.props.functions.setModalVisibility(true, `Edit ${this.props.model.substring(0, this.props.model.length)}`, 'edit', this.props.model, rowData.id)
+        this.props.functions.setModalVisibility(true, `Edit ${this.props.model.substring(0, this.props.model.length)}`, 'edit', this.props.model, rowData._id)
     }
 
     onDeleteClick = (event, rowData) => {
-        this.props.functions.setModalVisibility(true, `Remove ${this.props.model.substring(0, this.props.model.length)} "${rowData[this.props.field]}"`, 'delete', this.props.model, rowData.id)
+        this.props.functions.setModalVisibility(true, `Remove ${this.props.model.substring(0, this.props.model.length)} "${rowData[this.props.field]}"`, 'delete', this.props.model, rowData._id)
     }
 
     onRefreshClick = () => this.getData()
@@ -91,9 +92,10 @@ class TableView extends Component {
                 onClick: this.onDeleteClick
             }
         ]
+        if(this.props.model === 'order') actions.splice(1,1)
         return (
             <div>
-                <ContentHeader title={this.props.model.charAt(0).toUpperCase() + this.props.model.slice(1) + 's'} />
+                <ContentHeader title={this.props.customTitle ? this.props.customTitle : this.props.model.charAt(0).toUpperCase() + this.props.model.slice(1) + 's'} />
                 <Content>
                     <div>
                         <MaterialTable detailPanel={this.props.detailPanel} title="" columns={this.props.columns} icons={tableIcons}

@@ -4,15 +4,9 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Grid from '@mui/material/Grid';
-
-
-const addresses = ['1 MUI Drive', 'Reactville', 'Anytown', '99999', 'USA'];
-const payments = [
-  { name: 'Card type', detail: 'Visa' },
-  { name: 'Card holder', detail: 'Mr John Smith' },
-  { name: 'Card number', detail: 'xxxx-xxxx-xxxx-1234' },
-  { name: 'Expiry date', detail: '04/2024' },
-];
+import AddressForm from './AddressForm';
+// import PaymentForm from './PaymentForm';
+import product from "/product/productsData"
 
 export default function review() {
   return (
@@ -21,7 +15,7 @@ export default function review() {
         Order summary
       </Typography>
       <List disablePadding>
-        {products.map((product) => (
+        {product.map((product) => (
           <ListItem key={product.name} sx={{ py: 1, px: 0 }}>
             <ListItemText primary={product.name} secondary={product.desc} />
             <Typography variant="body2">{product.price}</Typography>
@@ -31,7 +25,7 @@ export default function review() {
         <ListItem sx={{ py: 1, px: 0 }}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
-            $34.06
+              $
           </Typography>
         </ListItem>
       </List>
@@ -41,7 +35,7 @@ export default function review() {
             Shipping
           </Typography>
           <Typography gutterBottom>John Smith</Typography>
-          <Typography gutterBottom>{addresses.join(', ')}</Typography>
+          <Typography gutterBottom>{AddressForm.address.join(', ')}</Typography>
         </Grid>
         <Grid item container direction="column" xs={12} sm={6}>
           <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>

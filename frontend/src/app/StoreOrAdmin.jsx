@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-//import Store from './store/Store'
+// import { connect } from 'react-redux'
+import Store from './store/Store'
 import Admin from './admin/Admin'
 class StoreOrAdmin extends Component {
 
     render() {
-        if (true || this.props.adminSession) {
+        if (this.props.adminSession) {
             return <Admin>{this.props.children}</Admin>
         } else {
-            return <span>Oi</span>/*<Store>{this.props.children}</Store>*/
+            return <Store>{this.props.children}</Store>
         }
     }
 }

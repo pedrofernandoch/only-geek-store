@@ -10,6 +10,14 @@ Navigation
   const scrollLink = document.querySelectorAll(".scroll-link");
   const navContainer = document.querySelector(".nav__menu");
 
+  if (navOpen || navClose || menu || scrollLink || navContainer) {
+    var link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.type = 'text/css'
+    link.href = '/css/style.css'
+    document.head.appendChild(link)
+  }
+
   navOpen.addEventListener("click", () => {
     menu.classList.add("open");
     document.body.classList.add("active");

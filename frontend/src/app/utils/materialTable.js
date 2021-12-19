@@ -16,7 +16,7 @@ import DeleteOutline from '@mui/icons-material/DeleteOutline'
 import Edit from '@mui/icons-material/Edit'
 import RefreshIcon from '@mui/icons-material/Refresh'
 
-const fileName = 'E-Learning_Data'
+const fileName = 'OnlyGeek_Data'
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -52,7 +52,7 @@ const options = {
   debounceInterval: 1000
 }
 
-const addIcon = () => <AddBox style={{ color: '#ca0096' }} />
+const addIcon = () => <AddBox style={{ color: '#00171F' }} />
 const editIcon = () => <Edit />
 const deleteIcon = () => <DeleteOutline />
 const refreshIcon = () => <RefreshIcon />

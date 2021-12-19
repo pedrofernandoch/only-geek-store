@@ -1,7 +1,7 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
-import logo from '../assets/logoOnlyGeek.png'
+import logo from '../assets/logoOnlyGeek.jpeg'
 
 export default function Copyright() {
   return (
@@ -18,5 +18,5 @@ export default function Copyright() {
         {'.'}
       </Typography>
     </>
-  );
+  )
 }

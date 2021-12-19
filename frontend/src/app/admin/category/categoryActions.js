@@ -1,4 +1,4 @@
-import { SET_CATEGORY_TO_INITIAL_STATE, SET_CURRENT_CATEGORY } from '../../utils/actionTypes'
+import { SET_CATEGORY_TO_INITIAL_STATE, SET_CURRENT_CATEGORY, SET_CATEGORY_OPTIONS } from '../../utils/actionTypes'
 
 export function setCategoryToInitialState() {
     return {
@@ -12,5 +12,12 @@ export function setCategory(category) {
     return {
         type: SET_CURRENT_CATEGORY,
         currentCategory: categoryData
+    }
+}
+
+export function setCategoryOptions(categories) {
+    return {
+        type: SET_CATEGORY_OPTIONS,
+        categories
     }
 }

@@ -1,94 +1,64 @@
+const mongoose = require('mongoose');
 module.exports = app => {
     const { existsOrError, notExistsOrError } = app.api.utils.validation
 
     const save = async (req, res) => {
-        const status = { ...req.body }
-        if (req.params.id) status.id = req.params.id
-
+        const product = { ...req.body }
+        if (req.params.id || req.params.id === 0) product._id = req.params.id
         try {
-            existsOrError(status.name, 'Name not found')
-            const statusFromDB = await app.db('status')
-                .where('status.name', '=', status.name).first('*')
-            if (!status.id) {
-                notExistsOrError(statusFromDB, 'Status not found')
+            existsOrError(product.photo, 'Image not found')
+            existsOrError(product.name, 'Name not found')
+            existsOrError(product.category === 0 ? true : product.category, 'Category not found')
+            product.category = mongoose.Types.ObjectId(product.category)
+            if(product.sub_category || product.sub_category === 0) product.sub_category = mongoose.Types.ObjectId(product.sub_category)
+            existsOrError(product.description, 'Description not found')
+            existsOrError(product.price, 'Price not found')
+            const productFromDB = await app.db.product.findOne({ name: product.name })
+
+            if (!product._id || product._id === 0) {
+                notExistsOrError(productFromDB, 'Product not found')
             } else {
-                if (statusFromDB && status.id != statusFromDB.id) throw 'Status alredy registered'
+                if (productFromDB && product._id != productFromDB._id) throw 'Product alredy registered'
             }
         } catch (msg) {
             return res.status(400).send(msg)
         }
 
-        if (status.id) {
-            app.db('status')
-                .update(status)
-                .where('status.id', '=', status.id)
-                .then(_ => res.status(204).send())
-                .catch(err => res.status(500).send(err))
-
+        if (product._id || product._id === 0) {
+            try {
+                const updatedProduct = await app.db.product.findByIdAndUpdate(product._id, product)
+                await updatedProduct.save()
+                res.status(204).send()
+            } catch (err) {
+                res.status(500).send(err)
+            }
         } else {
-            app.db('status')
-                .insert(status)
-                .then(_ => res.status(204).send())
-                .catch(err => res.status(500).send(err))
-        }
-
-        const newProduct = new app.db.product(request.body);
-
-        try {
-            await newProduct.save();
-            response.send(newProduct);
-        } catch (error) {
-            response.status(500).send(error);
-        }
-
-        try {
-            await app.db.product.findByIdAndUpdate(request.params.id, request.body);
-            await app.db.product.save();
-            response.send(newProduct);
-        } catch (error) {
-            response.status(500).send(error);
+            const newproduct = new app.db.product(product)
+            try {
+                await newproduct.save()
+                res.status(204).send()
+            } catch (err) {
+                res.status(500).send(err)
+            }
         }
     }
 
-    const get = (req, res) => {
-        app.db('status')
-            .select('*')
-            .then(status => res.json(status))
-            .catch(err => res.status(500).send(err))
-
-        const findProduct = await app.db.product.find({});
-
+    const get = async (req, res) => {
+        const products = await app.db.product.find({})
         try {
-            response.send(findProduct);
-        } catch (error) {
-            response.status(500).send(error);
+            res.json(products)
+        } catch (err) {
+            res.status(500).send(err)
         }
     }
 
     const remove = async (req, res) => {
         try {
-            const rowsDeleted = await app.db.product('status')
-                .where('status.id', '=', req.params.id).del()
-
-            try {
-                existsOrError(rowsDeleted, 'Status not found')
-            } catch (msg) {
-                return res.status(400).send(msg)
-            }
-
-            res.status(204).send()
-        } catch (msg) {
-            res.status(500).send(msg)
-        }
-
-
-        try {
-            const newProduct = await app.db.product.findByIdAndDelete(request.params.id);
-
-            if (!newProduct) response.status(404).send("No item found");
-            response.status(200).send();
-        } catch (error) {
-            response.status(500).send(error);
+            const product = await app.db.product.findByIdAndDelete(req.params.id)
+            if (!product) res.status(404).send("Product not found")
+            res.status(200).send()
+        } catch (err) {
+            res.status(500).send(err)
         }
     }
 

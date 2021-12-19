@@ -2,12 +2,23 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "production": "pm2 start index.js --name onlyGeek-backend"
+  },
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "consign": "^0.1.6",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.2",
-    "mongoose": "^6.1.2"
+    "jwt-simple": "^0.5.6",
+    "mongoose": "^6.1.2",
+    "mongoose-auto-increment": "^5.0.1",
+    "passport": "^0.5.2",
+    "passport-jwt": "^4.0.0",
+    "pm2": "^5.1.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

@@ -3,13 +3,16 @@ import { Field } from 'redux-form'
 import Grid from '@mui/material/Grid'
 import { renderTextField  } from '../../utils/fieldRendering'
 
-class OrdersForm extends Component {
+class OrderForm extends Component {
 
     render() {
         return (
             <Grid container spacing={2}>
                 <Grid item xs={4}>
-                    <Field component={renderTextField} name="id" label="ID" margin="dense" fullWidth/>
+                    <Field component={renderTextField} name="orderid" label="Order ID" margin="dense" fullWidth/>
+                </Grid>
+                <Grid item xs={4}>
+                    <Field component={renderTextField} name="userid" label="User ID" margin="dense" fullWidth/>
                 </Grid>
                 <Grid item xs={6}>
                     <Field component={renderTextField} name="name" label="Name" margin="dense" fullWidth/>
@@ -22,4 +25,4 @@ class OrdersForm extends Component {
     }
 }
 
-export default OrdersForm
+export default OrderForm

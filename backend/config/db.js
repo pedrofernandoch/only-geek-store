@@ -1,131 +1,158 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+require('dotenv').config()
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+const autoIncrement = require('mongoose-auto-increment')
 
-//Conctar banco
-mongoose.connect('mongodb+srv://mari:mari@scc.x5pvr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+const connection = mongoose.createConnection(process.env.CONNECTION_STRING)
 
+autoIncrement.initialize(connection)
 
-const ProductSchema = new mongoose.Schema({
-  id: {
-    type: Number,
+const CateogrySchema = new Schema({
+  name: {
+    type: String,
     required: true,
     trim: true,
-    index: true,
+    lowercase: true,
+  },
+})
+CateogrySchema.plugin(autoIncrement.plugin, 'Category')
+
+const SubCateogrySchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+    lowercase: true,
+  },
+})
+SubCateogrySchema.plugin(autoIncrement.plugin, 'SubCategory')
+
+const ProductSchema = new Schema({
+  photo: {
+    type: String,
+    required: true,
     unique: true,
+  },
+  name: {
+    type: String,
+    required: true,
+    trim: true,
+    lowercase: true,
+    unique: true,
+  },
+  category: {
+    type: Schema.Types.ObjectId,
+    ref: 'Category',
+    required: true,
+  },
+  sub_category: {
+    type: Schema.Types.ObjectId,
+    ref: 'SubCategory',
+  },
+  description: {
+    type: String,
+    require: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+    validate(value) {
+      if (value < 0) throw new Error("Invalid price.");
     },
-    name: {
-      type: String,
-      required: true,
-      trim: true,
-      lowercase: true,
+  },
+  stock: {
+    type: Number,
+    default: 0,
+    validate(value) {
+      if (value = 0) throw new Error("Restock.");
     },
-    category:[{
-      type: String,
-      required: true
-    }],
-    description:{
-      type: String,
-      require: true,
-      trim: true
+  },
+  units_sold: {
+    type: Number,
+    default: 0,
+    validate(value) {
+      if (value < 0) throw new Error("Invalid value.");
     },
-    price: {
-      type: Number,
-      required: true,
-      default: 0,
-      validate(value) {
-        if (value < 0) throw new Error("Invalid price.");
-      },
-    },
-    stock: {
-      type: Number,
-      required: true,
-      default: 0,
-      validate(value) {
-        if (value = 0) throw new Error("Restock.");
-      },
-    },
-    sold: {
-      type: Number,
-      required: true,
-      default: 0,
-      validate(value) {
-        if (value < 0) throw new Error("Invalid value.");
-      },
-    },
-  });
+  },
+})
+ProductSchema.plugin(autoIncrement.plugin, 'Product')
 
-  const OrderSchema = new mongoose.Schema({
-    id: {
-      type: Number,
-      required: true,
-      trim: true,
-      index: true,
-      unique: true,
-    },
-    status:{
-      type: String,
-      require: true,
-      trim: true
-    },
-    user_id: {
-      type: Number,
-      required: true,
-      trim: true,
-      index: true,
-      unique: true,
-    },
-    price: {
-      type: Number,
-      required: true,
-      default: 0,
-      validate(value) {
-        if (value < 0) throw new Error("Invalid price.");
-      },
-    },
-  });
-
-  const CateogrySchema = new mongoose.Schema({
-    id: {
-      type: Number,
-      required: true,
-      trim: true,
-      index: true,
-      unique: true,
-    },
-    name: {
-      type: String,
-      required: true,
-      trim: true,
-      lowercase: true,
-    },
-  });
-  
-  const SubCateogrySchema = new mongoose.Schema({
-    id: {
-      type: Number,
-      required: true,
-      trim: true,
-      index: true,
-      unique: true,
-    },
-    name: {
-      type: String,
-      required: true,
-      trim: true,
-      lowercase: true,
-    },
-  });
-
-  const Product = mongoose.model("Product", ProductSchema);
-  const Order = mongoose.model("Product", OrderSchema);
-  const Category = mongoose.model("Product", CateogrySchema);
-  const SubCategory = mongoose.model("Product", SubCateogrySchema);
-
-  const db = {
-    product: Product,
-    order: Order,
-    category: Category,
-    subCategory: SubCategory
+const UserSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  adress: {
+    type: String,
+    required: true,
+  },
+  photo: {
+    type: String,
+  },
+  phone: {
+    type: Number,
+    required: true,
+  },
+  register_date: {
+    type: Date,
+    required: true,
+  },
+  wish_list: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Product'
+    }
+  ],
+  admin: {
+    type: Boolean,
+    default: false,
+    required: true,
   }
+})
+UserSchema.plugin(autoIncrement.plugin, 'User')
 
-module.exports = db;
+const OrderSchema = new Schema({
+  status: {
+    type: String,
+    require: true,
+    trim: true
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  },
+  products: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Product',
+      required: true,
+    }
+  ]
+})
+OrderSchema.plugin(autoIncrement.plugin, 'Order')
+
+const Product = connection.model("Product", ProductSchema)
+const Order = connection.model("Order", OrderSchema)
+const Category = connection.model("Category", CateogrySchema)
+const SubCategory = connection.model("SubCategory", SubCateogrySchema)
+const User = connection.model("User", UserSchema)
+
+const db = {
+  product: Product,
+  order: Order,
+  category: Category,
+  subCategory: SubCategory,
+  user: User
+}
+
+module.exports = db

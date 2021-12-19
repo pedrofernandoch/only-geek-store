@@ -1,37 +1,37 @@
 import React from 'react'
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import { styled } from '@mui/material/styles';
-import MuiDrawer from '@mui/material/Drawer';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import CallIcon from '@mui/icons-material/Call';
-import FeedbackIcon from '@mui/icons-material/Feedback';
-import ListItemButton from './ListItemButton';
+import List from '@mui/material/List'
+import Divider from '@mui/material/Divider'
+import { styled } from '@mui/material/styles'
+import MuiDrawer from '@mui/material/Drawer'
+import Toolbar from '@mui/material/Toolbar'
+import IconButton from '@mui/material/IconButton'
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import ListItemButton from './ListItemButton'
+import CategoryIcon from '@mui/icons-material/Category'
+import ViewListIcon from '@mui/icons-material/ViewList'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import StoreIcon from '@mui/icons-material/Store'
 
 export const listItems = (
   <div>
     <ListItemButton text="Products" path="/">
-      <DashboardIcon />
+      <ShoppingCartIcon />
+    </ListItemButton>
+    <ListItemButton text="Categories" path="categories">
+      <CategoryIcon />
+    </ListItemButton>
+    <ListItemButton text="Subcategories" path="subcategories">
+      <ViewListIcon />
     </ListItemButton>
     <ListItemButton text="Users" path="users">
       <AccountCircleIcon />
     </ListItemButton>
-    <ListItemButton text="Contacts" path="contacts">
-      <CallIcon />
-    </ListItemButton>
-    <ListItemButton text="Feedbacks" path="feedbacks">
-      <FeedbackIcon />
-    </ListItemButton>
-    <ListItemButton text="Admins" path="admins">
-      <AdminPanelSettingsIcon />
+    <ListItemButton text="Orders" path="orders">
+      <StoreIcon />
     </ListItemButton>
   </div>
-);
+)
 
 const drawerWidth = 240;
 
@@ -59,7 +59,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
       }),
     },
   }),
-);
+)
 
 export default function Menu(props) {
   return (
@@ -70,5 +70,5 @@ export default function Menu(props) {
       <Divider />
       <List>{listItems}</List>
     </Drawer>
-  );
+  )
 }
