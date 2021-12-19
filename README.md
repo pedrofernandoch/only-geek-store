@@ -56,22 +56,20 @@ Some of the features such as the checkout page weren't implemented.
 
 ## Test Plan
 
-To test the api we will use postman and we will build a table of inputs and their expected outputs to validate the created functions. For the frontend, we will create possible paths between the application's routes ranging from product search and choice, addition to the cart, login or registration and finally the purchase checkout, as well as the crud of the admin page.
+To test the API we will use postman and we will build a table of inputs and their expected outputs to validate the created functions. For the frontend, we will create possible paths between the application's routes ranging from product search and choice, addition to the cart, login or registration and finally the purchase checkout, as well as the crud of the admin page.
 The database will be created with MongoDb to provide NoSql storage and retrieval data system. Then routes connecting to the database’s tuples will be created in the backend so the admins can manage the store.
 
 ## Test Results
 
-The first test is to verify the APIs :
+The first test, we tested if it is possible to add a product to the shopping cart. As for now, the shopping cart is not fully implemented, so it is not possible to finalize the operation.
+
+In the second one, we tried to perform a registration/login and purchase the product that we previously added to the cart. So, we tried to perform login and proceed to the ‘checkout’ button present in the cart sidebar. We have not finished the implementation of the checkout functionality, as it depends on the shopping cart. So this functionality is not fully implemented.
+
+For the third test, we entered the admin page and tried to do some operations (save, get and delete) in the data table. This part is fully implemented, so it is possible to do all operations.
+
+The last test is to verify the APIs :
 We used Postman to test the API for the methods save, delete and post. For this example, we utilized the ‘subCategory’ section.
-Input:
 
-Output:
-
-For the second one, we tested if it is possible to search for a product and add it to the shopping cart. For this test, we searched for the ‘xxxxx’ product and added it to the cart. 
-
-In the third test, we tried to perform a registration/login and purchase the product that we previously added to the cart. So, we tried to perform login and proceed to the ‘checkout’ button present in the cart sidebar. After that, we added the necessary information and completed the purchase.
-
-For the last test, we logged in as an admin and tried to do some operations (save, get and delete) in the data table.
 
 
 ## Build Procedures
