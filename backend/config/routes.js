@@ -32,11 +32,11 @@ module.exports = app => {
         .put(app.api.safety.user.save)
         .delete(app.api.safety.user.remove)
 
-    // app.route('/orders')
-    //     .post(app.api.auxiliary.order.save)
-    //     .get(app.api.auxiliary.order.get)
+    app.route('/orders')
+        .post(app.api.main.order.save)
+        .get(app.api.main.order.get)
 
-    // app.route('/orders/:id')
-    //     .put(app.api.auxiliary.order.save)
-    //     .delete(app.api.auxiliary.order.remove)
+    app.route('/orders/:id')
+        .put(app.api.main.order.save)
+        .delete(app.api.main.order.remove)
 }

@@ -3,6 +3,7 @@ import TableView from '../table/TableView'
 
 const ordersColumns = [
   { title: "OrderID", field: "_id", hidden: true },
+  { title: "Order Number", field: "number"},
   { title: "Status", field: "status" },
   { title: "User", field: "user" },
 ]

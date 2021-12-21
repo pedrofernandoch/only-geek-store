@@ -92,7 +92,7 @@ class TableView extends Component {
                 onClick: this.onDeleteClick
             }
         ]
-        if(this.props.model === 'order') actions.splice(1,1)
+        // if(this.props.model === 'order') actions.splice(1,1)
         return (
             <div>
                 <ContentHeader title={this.props.customTitle ? this.props.customTitle : this.props.model.charAt(0).toUpperCase() + this.props.model.slice(1) + 's'} />

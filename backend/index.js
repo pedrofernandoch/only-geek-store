@@ -10,7 +10,7 @@ app.use(express.json())
 app.use(cors())
 
 consign()
-    // .include('./config/passport.js')
+    .include('./config/passport.js')
     .include('./api/utils/validation.js')
     .then('./api')
     .then('./config/routes.js')

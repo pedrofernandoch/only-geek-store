@@ -3,9 +3,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const autoIncrement = require('mongoose-auto-increment')
 
-const connection = mongoose.createConnection(process.env.CONNECTION_STRING)
+// const connection = mongoose.createConnection(process.env.CONNECTION_STRING)
 
-autoIncrement.initialize(connection)
+const connection = mongoose.createConnection('mongodb+srv://mari:mari@scc.x5pvr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
+autoIncrement.initialize(connection);
 
 const CateogrySchema = new Schema({
   name: {
@@ -121,6 +122,10 @@ const UserSchema = new Schema({
 UserSchema.plugin(autoIncrement.plugin, 'User')
 
 const OrderSchema = new Schema({
+  number: {
+    type: Number,
+    required: true,
+  },
   status: {
     type: String,
     require: true,

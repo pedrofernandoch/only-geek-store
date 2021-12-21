@@ -7,14 +7,14 @@ module.exports = app => {
         if (req.params.id || req.params.id === 0) order._id = req.params.id
         
         try {
-            existsOrError(order.photo, 'Image not found')
-            existsOrError(order.name, 'Name not found')
-            existsOrError(order.category === 0 ? true : order.category, 'Category not found')
-            order.category = mongoose.Types.ObjectId(order.category)
-            if(order.sub_category || order.sub_category === 0) order.sub_category = mongoose.Types.ObjectId(order.sub_category)
-            existsOrError(order.description, 'Description not found')
-            existsOrError(order.price, 'Price not found')
-            const orderFromDB = await app.db.order.findOne({ name: order.name })
+            // existsOrError(order.photo, 'Image not found')
+            existsOrError(order.number, 'Order number not found')
+            existsOrError(order.products === 0 ? true : order.products, 'Products not found')
+            order.products = mongoose.Types.ObjectId(order.products)
+            existsOrError(order.user === 0 ? true : order.user, 'User not found')
+            order.user = mongoose.Types.ObjectId(order.user)
+            existsOrError(order.status, 'Status not found')
+            const orderFromDB = await app.db.order.findOne({ number: order.number })
 
             if (!order._id || order._id === 0) {
                 notExistsOrError(orderFromDB, 'order not found')
@@ -34,9 +34,9 @@ module.exports = app => {
                 res.status(500).send(err)
             }
         } else {
-            const neworder = new app.db.order(order)
+            const newOrder = new app.db.order(order)
             try {
-                await neworder.save()
+                await newOrder.save()
                 res.status(204).send()
             } catch (err) {
                 res.status(500).send(err)
